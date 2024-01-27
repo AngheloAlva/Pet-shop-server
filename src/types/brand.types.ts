@@ -1,4 +1,3 @@
-import type { PaginationDto } from '../domain/shared/pagination.dto'
 import type { Product } from './products.types'
 
 interface Brand {
@@ -22,13 +21,8 @@ interface UpdateBrand {
   slug?: string
 }
 
-interface GetAllBrands extends PaginationDto {
-  isAvailable?: boolean
-}
-
 export {
   type Brand,
   type CreateBrand,
-  type UpdateBrand,
-  type GetAllBrands
+  type UpdateBrand
 }

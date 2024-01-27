@@ -10,7 +10,7 @@ import {
   createBrandValidation,
   getAllBrandsValidation,
   updateBrandValidation
-} from '../../middleware/brand-validations'
+} from '../../middleware/models-validations/brand-validations'
 
 export class BrandRoutes {
   static get routes (): Router {

@@ -1,5 +1,6 @@
 interface Option {
   id: number
+  name: string
   price: number
   stock: number
   discount: number
@@ -8,6 +9,7 @@ interface Option {
 }
 
 interface CreateOption {
+  name: string
   price: number
   stock: number
   discount: number

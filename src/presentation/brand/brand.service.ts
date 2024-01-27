@@ -2,10 +2,10 @@ import { CustomError } from '../../domain/errors/custom.error'
 import { verifyBrandExist } from '../../helpers/brand-helpers'
 import { prisma } from '../../domain/shared/prismaClient'
 
+import type { AvailableWithPagination } from '../../types/shared.types'
 import type {
   Brand,
   CreateBrand,
-  GetAllBrands,
   UpdateBrand
 } from '../../types/brand.types'
 
@@ -32,7 +32,7 @@ export class BrandService {
 
   async getAllBrands ({
     limit = 1, page = 1, isAvailable = true
-  }: GetAllBrands): Promise<Brand[]> {
+  }: AvailableWithPagination): Promise<Brand[]> {
     try {
       const brands = await prisma.brand.findMany({
         where: {

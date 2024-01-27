@@ -105,7 +105,9 @@ export class BrandController {
 
       await this.brandService.deleteBrand(Number(id))
 
-      return res.status(204).json()
+      return res.status(200).json({
+        message: 'Brand deleted successfully'
+      })
     } catch (error) {
       return this.handleError(error, res)
     }
@@ -117,7 +119,9 @@ export class BrandController {
 
       await this.brandService.restoreBrand(Number(id))
 
-      return res.status(204).json()
+      return res.status(200).json({
+        message: 'Brand restored successfully'
+      })
     } catch (error) {
       return this.handleError(error, res)
     }
