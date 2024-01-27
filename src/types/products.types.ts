@@ -25,6 +25,7 @@ interface CreateProduct {
   categoryId: number
   petType: 'DOG' | 'CAT' | 'BIRD' | 'FISH' | 'REPTILE' | 'SMALL_ANIMAL'
   name: string
+  slug: string
   miniDesc: string
   description: string
   images: string[]
@@ -36,6 +37,7 @@ interface UpdateProduct {
   categoryId?: number
   petType?: 'DOG' | 'CAT' | 'BIRD' | 'FISH' | 'REPTILE' | 'SMALL_ANIMAL'
   name?: string
+  slug?: string
   miniDesc?: string
   description?: string
   images?: string[]

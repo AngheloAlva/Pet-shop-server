@@ -3,6 +3,7 @@ import type { Product } from './products.types'
 interface Category {
   id: number
   name: string
+  slug: string
   description: string
   image: string
   createdAt: Date
@@ -12,12 +13,14 @@ interface Category {
 
 interface CreateCategory {
   name: string
+  slug: string
   description: string
   image: string
 }
 
 interface UpdateCategory {
   name?: string
+  slug?: string
   description?: string
   image?: string
 }

@@ -40,11 +40,12 @@ enum PaymentStatus {
 }
 
 model Brand {
-  id          Int         @id @default(autoincrement())
-  name        String
+  id            Int         @id @default(autoincrement())
+  name          String
   isAvailable   Boolean     @default(true)
-  image       String
-  products    Product[]
+  image         String
+  products      Product[]
+  slug          String      @unique
 }
 
 model Product {
@@ -60,9 +61,10 @@ model Product {
   brand         Brand           @relation(fields: [brandId], references: [id])
   lifeStage     LifeStage
   brandId       Int
-  isAvailable     Boolean         @default(true)
+  isAvailable   Boolean         @default(true)
   createdAt     DateTime        @default(now())
   cart          ProductCart[]
+  slug          String          @unique
 }
 
 model Option {
@@ -78,6 +80,7 @@ model Option {
 model Category {
   id            Int         @id @default(autoincrement())
   name          String
+  slug          String      @unique
   description   String
   image         String
   createdAt     DateTime    @default(now())
