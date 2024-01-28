@@ -7,7 +7,7 @@ interface Category {
   description: string
   image: string
   createdAt: Date
-  products: Product[]
+  products?: Product[]
   isAvailable: boolean
 }
 
