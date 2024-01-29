@@ -1,17 +1,10 @@
-import { body, param, query } from 'express-validator'
+import { body, param } from 'express-validator'
 import { validate } from '../validation'
 
 export const createBrandValidation = [
   body('name').isString().notEmpty().withMessage('Name is required'),
   body('slug').isString().notEmpty().withMessage('Slug is required'),
   body('image').isString().notEmpty().withMessage('Image is required'),
-  validate
-]
-
-export const getAllBrandsValidation = [
-  query('isAvailable').isBoolean().withMessage('IsAvailable must be a boolean'),
-  query('limit').isNumeric().withMessage('Limit must be a number'),
-  query('page').isNumeric().withMessage('Page must be a number'),
   validate
 ]
 

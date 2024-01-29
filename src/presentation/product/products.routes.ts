@@ -7,6 +7,7 @@ import { idValidation } from '../../middleware/id-validation'
 import { ProductController } from './product.controller'
 import { ProductService } from './product.service'
 import { Router } from 'express'
+import { getAllModelValidation } from '../../middleware/get-all-model-validation'
 
 export class ProductRoutes {
   static get routes (): Router {
@@ -16,7 +17,7 @@ export class ProductRoutes {
 
     router.post('/product', createProductValidation, controller.createProduct)
 
-    router.get('/product', controller.getAllProducts)
+    router.get('/product', getAllModelValidation, controller.getAllProducts)
     router.get('/product/:id', idValidation, controller.getProductById)
     router.get('/product/by-slug/:slug', slugValidation, controller.getProductBySlug)
 

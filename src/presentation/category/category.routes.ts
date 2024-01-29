@@ -7,6 +7,7 @@ import { CategoryController } from './category.controller'
 import { createCategoryValidations, updateCategoryValidations } from '../../middleware/models-validations/category-validations'
 import { idValidation } from '../../middleware/id-validation'
 import { slugValidation } from '../../middleware/slug-validation'
+import { getAllModelValidation } from '../../middleware/get-all-model-validation'
 
 export class CategoryRoutes {
   static get routes (): Router {
@@ -16,7 +17,7 @@ export class CategoryRoutes {
 
     router.post('/category', createCategoryValidations, controller.createCategory)
 
-    router.get('/category', controller.getAllCategories)
+    router.get('/category', getAllModelValidation, controller.getAllCategories)
     router.get('/category/:id', idValidation, controller.getCategoryById)
     router.get('/category/by-slug/:slug', slugValidation, controller.getCategoryBySlug)
 

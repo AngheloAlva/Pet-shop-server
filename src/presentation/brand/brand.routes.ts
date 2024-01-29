@@ -6,11 +6,8 @@ import { idValidation } from '../../middleware/id-validation'
 import { BrandController } from './brand.controller'
 import { BrandService } from './brand.service'
 import { Router } from 'express'
-import {
-  createBrandValidation,
-  getAllBrandsValidation,
-  updateBrandValidation
-} from '../../middleware/models-validations/brand-validations'
+import { createBrandValidation, updateBrandValidation } from '../../middleware/models-validations/brand-validations'
+import { getAllModelValidation } from '../../middleware/get-all-model-validation'
 
 export class BrandRoutes {
   static get routes (): Router {
@@ -20,7 +17,7 @@ export class BrandRoutes {
 
     router.post('/brand', createBrandValidation, controller.createBrand)
 
-    router.get('/brand', getAllBrandsValidation, controller.getAllBrands)
+    router.get('/brand', getAllModelValidation, controller.getAllBrands)
     router.get('/brand/:id', idValidation, controller.getBrandById)
     router.get('/brand/by-slug/:slug', slugValidation, controller.getBrandBySlug)
 

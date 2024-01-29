@@ -9,12 +9,12 @@ interface User {
   email: string
   password: string
   rut: string
-  role: 'ADMIN' | 'USER'
+  role: string
   createdAt: Date
   isActive: boolean
-  address: Address[]
+  address?: Address[]
   phone: string
-  orders: Order[]
+  orders?: Order[]
   cart?: Cart
 }
 
@@ -24,7 +24,6 @@ interface CreateUser {
   email: string
   password: string
   rut: string
-  role: 'ADMIN' | 'USER'
   phone: string
 }
 
@@ -34,7 +33,6 @@ interface UpdateUser {
   email?: string
   password?: string
   rut?: string
-  role?: 'ADMIN' | 'USER'
   phone?: string
 }
 
