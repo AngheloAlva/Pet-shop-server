@@ -4,6 +4,7 @@ import bcrypt from 'bcrypt'
 
 import type { CreateUser, UpdateUser, User } from '../../types/user.types'
 import type { AvailableWithPagination } from '../../types/shared.types'
+import { generateVerificationCode } from '../../helpers/verificationCodeGenerator'
 
 export class UserService {
   async createUser ({
@@ -12,14 +13,17 @@ export class UserService {
     try {
       const passwordHash = await bcrypt.hash(password, 10)
 
+      const verificationCode = generateVerificationCode(6)
+
       await prisma.user.create({
         data: {
+          rut,
+          name,
+          phone,
           email,
           lastName,
-          name,
-          password: passwordHash,
-          phone,
-          rut
+          verificationCode,
+          password: passwordHash
         }
       })
 
