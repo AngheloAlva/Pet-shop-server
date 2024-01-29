@@ -3,6 +3,7 @@ import { CustomError } from '../../domain/errors/custom.error'
 import { prisma } from '../../domain/shared/prismaClient'
 import jwt from 'jsonwebtoken'
 import bcrypt from 'bcrypt'
+import { sendEmail } from '../../utils/mailjet'
 
 interface LoginParams {
   email: string
@@ -137,12 +138,18 @@ export class AuthService {
         }
       })
 
-      // TODO: Send email with resetPasswordToken
-      // Like this:
-      // const resetLink = `${envs.CLIENT_URL}/auth/forgot-password?token=${resetToken}`
-      // const subject = 'Reset your password'
-      // const text = `Click on this link to reset your password: ${resetLink}`
-      // const html = `<p>Click on this link to reset your password: <a href="${resetLink}">${resetLink}</a></p>`
+      const resetLink = `${envs.CLIENT_URL}/auth/forgot-password?token=${resetPasswordToken}`
+      const subject = 'Reset your password'
+      const text = `Click on this link to reset your password: ${resetLink}`
+      const html = `<p>Click on this link to reset your password: <a href="${resetLink}">${resetLink}</a></p>`
+
+      await sendEmail({
+        html,
+        name: `${user.name} ${user.lastName}`,
+        subject,
+        text,
+        to: user.email
+      })
     } catch (error) {
       throw CustomError.internalServerError(error as string)
     }

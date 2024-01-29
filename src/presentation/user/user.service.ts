@@ -5,6 +5,7 @@ import bcrypt from 'bcrypt'
 import type { CreateUser, UpdateUser, User } from '../../types/user.types'
 import type { AvailableWithPagination } from '../../types/shared.types'
 import { generateVerificationCode } from '../../helpers/verificationCodeGenerator'
+import { sendEmail } from '../../utils/mailjet'
 
 export class UserService {
   async createUser ({
@@ -25,6 +26,18 @@ export class UserService {
           verificationCode,
           password: passwordHash
         }
+      })
+
+      const subject = 'Verifica tu cuenta'
+      const text = `Tu código de verificación es ${verificationCode}`
+      const html = `<h1>Tu código de verificación es ${verificationCode}</h1>`
+
+      await sendEmail({
+        to: email,
+        name: `${name} ${lastName}`,
+        subject,
+        text,
+        html
       })
 
       return {
