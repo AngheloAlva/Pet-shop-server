@@ -10,6 +10,7 @@ import {
   OptionRoutes,
   AddressRoutes,
   ProductRoutes,
+  PaymentRoutes,
   CategoryRoutes
 } from './routes-exports'
 
@@ -23,6 +24,7 @@ export class AppRoutes {
     router.use('/api', OrderRoutes.routes)
     router.use('/api', BrandRoutes.routes)
     router.use('/api', OptionRoutes.routes)
+    router.use('/api', PaymentRoutes.routes)
     router.use('/api', ProductRoutes.routes)
     router.use('/api', AddressRoutes.routes)
     router.use('/api', CategoryRoutes.routes)
