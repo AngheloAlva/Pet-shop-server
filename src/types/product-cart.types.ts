@@ -3,7 +3,7 @@ import type { Product } from './products.types'
 interface ProductCart {
   id: number
   cartId: number
-  product: Product
+  product?: Product
   productId: number
   quantity: number
   optionSelectedIndex: number

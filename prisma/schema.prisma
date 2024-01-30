@@ -125,6 +125,7 @@ model ProductCart {
   productId             Int
   quantity              Int 
   optionSelectedIndex   Int
+  addedAt               DateTime  @default(now())
 }
 
 model Address {
