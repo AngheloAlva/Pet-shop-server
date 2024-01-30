@@ -1,3 +1,4 @@
+import type { ProductCart } from './product-cart.types'
 import type { Order } from './order.types'
 
 interface Payment {
@@ -11,6 +12,14 @@ interface Payment {
   createdAt: Date
 }
 
+interface CreatePayment {
+  userId: number
+  productsCart: ProductCart[]
+  orderId: number
+  shippingMethod: 'CHILEXPRESS' | 'STARKEN' | 'CORREOS_CHILE' | 'SHOP_PICKUP'
+}
+
 export {
-  type Payment
+  type Payment,
+  type CreatePayment
 }
