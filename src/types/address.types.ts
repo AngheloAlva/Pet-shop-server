@@ -3,7 +3,7 @@ import type { User } from './user.types'
 
 interface Address {
   id: number
-  user: User
+  user?: User
   userId: number
   name: string
   street: string
@@ -12,8 +12,8 @@ interface Address {
   commune: string
   region: string
   isApartment: boolean
-  apartmentNumber: string
-  orders: Order[]
+  apartmentNumber: string | null
+  orders?: Order[]
 }
 
 interface CreateAddress {
@@ -23,6 +23,7 @@ interface CreateAddress {
   zipCode: string
   commune: string
   region: string
+  userId: number
   isApartment: boolean
   apartmentNumber: string
 }
