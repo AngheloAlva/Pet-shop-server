@@ -1,7 +1,11 @@
 import { CustomError } from '../../domain/errors/custom.error'
 import { prisma } from '../../domain/shared/prismaClient'
 
-import type { Address, CreateAddress, UpdateAddress } from '../../types/address.types'
+import type {
+  Address,
+  CreateAddress,
+  UpdateAddress
+} from '../../types/address.types'
 
 export class AddressService {
   async createAddress ({

@@ -1,10 +1,15 @@
 /* eslint-disable @typescript-eslint/no-misused-promises */
 /* eslint-disable @typescript-eslint/no-extraneous-class */
 
-import { Router } from 'express'
-import { AuthService } from './auth.service'
 import { AuthController } from './auth.controller'
-import { handleResetPasswordRequestValidation, loginValidation, resetPasswordValidation, verifyEmailValidation } from '../../middleware/models-validations/auth-validations'
+import { AuthService } from './auth.service'
+import { Router } from 'express'
+import {
+  handleResetPasswordRequestValidation,
+  loginValidation,
+  resetPasswordValidation,
+  verifyEmailValidation
+} from '../../middleware/models-validations/auth-validations'
 
 export class AuthRoutes {
   static get routes (): Router {

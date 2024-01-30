@@ -1,10 +1,15 @@
 /* eslint-disable @typescript-eslint/no-misused-promises */
 /* eslint-disable @typescript-eslint/no-extraneous-class */
 
-import { Router } from 'express'
-import { CartService } from './cart.service'
 import { CartController } from './cart.controller'
-import { addProductToCartValidation, removeProductFromCartValidation, updateProductQuantityValidation, userIdValidation } from '../../middleware/models-validations/cart-validations'
+import { CartService } from './cart.service'
+import { Router } from 'express'
+import {
+  addProductToCartValidation,
+  removeProductFromCartValidation,
+  updateProductQuantityValidation,
+  userIdValidation
+} from '../../middleware/models-validations/cart-validations'
 
 export class CartRoutes {
   static get routes (): Router {

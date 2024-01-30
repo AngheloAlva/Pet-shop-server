@@ -1,11 +1,15 @@
 /* eslint-disable @typescript-eslint/no-misused-promises */
 /* eslint-disable @typescript-eslint/no-extraneous-class */
 
-import { Router } from 'express'
-import { AddressService } from './address.service'
-import { AddressController } from './controller.address'
-import { createAddressValidation, getAddressByUserIdValidation, updateAddressValidation } from '../../middleware/models-validations/address-validations'
 import { idValidation } from '../../middleware/id-validation'
+import { AddressController } from './controller.address'
+import { AddressService } from './address.service'
+import { Router } from 'express'
+import {
+  createAddressValidation,
+  getAddressByUserIdValidation,
+  updateAddressValidation
+} from '../../middleware/models-validations/address-validations'
 
 export class AddressRoutes {
   static get routes (): Router {

@@ -1,13 +1,16 @@
 /* eslint-disable @typescript-eslint/no-misused-promises */
 /* eslint-disable @typescript-eslint/no-extraneous-class */
 
-import { createProductValidation, updateProductValidation } from '../../middleware/models-validations/product-validations'
+import { getAllModelValidation } from '../../middleware/get-all-model-validation'
 import { slugValidation } from '../../middleware/slug-validation'
 import { idValidation } from '../../middleware/id-validation'
 import { ProductController } from './product.controller'
 import { ProductService } from './product.service'
 import { Router } from 'express'
-import { getAllModelValidation } from '../../middleware/get-all-model-validation'
+import {
+  createProductValidation,
+  updateProductValidation
+} from '../../middleware/models-validations/product-validations'
 
 export class ProductRoutes {
   static get routes (): Router {

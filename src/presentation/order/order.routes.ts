@@ -1,10 +1,10 @@
 /* eslint-disable @typescript-eslint/no-misused-promises */
 /* eslint-disable @typescript-eslint/no-extraneous-class */
 
-import { Router } from 'express'
-import { OrderService } from './order.service'
-import { OrderController } from './order.controller'
 import { idValidation } from '../../middleware/id-validation'
+import { OrderController } from './order.controller'
+import { OrderService } from './order.service'
+import { Router } from 'express'
 import {
   getOrderByUserIdValidations,
   getOrdersValidations

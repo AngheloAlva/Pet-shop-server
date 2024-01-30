@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-misused-promises */
 /* eslint-disable @typescript-eslint/no-extraneous-class */
 
-import { idValidation } from '../../middleware/id-validation'
 import { updateOptionValidation } from '../../middleware/models-validations/option-validations'
+import { idValidation } from '../../middleware/id-validation'
 import { OptionController } from './option.controller'
 import { OptionService } from './option.service'
 import { Router } from 'express'

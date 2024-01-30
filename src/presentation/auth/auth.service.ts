@@ -1,9 +1,9 @@
-import { envs } from '../../config/envs'
 import { CustomError } from '../../domain/errors/custom.error'
 import { prisma } from '../../domain/shared/prismaClient'
+import { sendEmail } from '../../utils/mailjet'
+import { envs } from '../../config/envs'
 import jwt from 'jsonwebtoken'
 import bcrypt from 'bcrypt'
-import { sendEmail } from '../../utils/mailjet'
 
 interface LoginParams {
   email: string

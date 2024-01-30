@@ -10,6 +10,8 @@ export class OrderService {
   }: PaginationDto): Promise<Order[]> {
     try {
       const orders = await prisma.order.findMany({
+        skip: (page - 1) * limit,
+        take: limit,
         include: {
           items: true,
           payment: true

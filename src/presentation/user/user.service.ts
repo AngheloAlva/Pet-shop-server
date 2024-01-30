@@ -1,11 +1,11 @@
+import { generateVerificationCode } from '../../helpers/verificationCodeGenerator'
 import { CustomError } from '../../domain/errors/custom.error'
 import { prisma } from '../../domain/shared/prismaClient'
+import { sendEmail } from '../../utils/mailjet'
 import bcrypt from 'bcrypt'
 
 import type { CreateUser, UpdateUser, User } from '../../types/user.types'
 import type { AvailableWithPagination } from '../../types/shared.types'
-import { generateVerificationCode } from '../../helpers/verificationCodeGenerator'
-import { sendEmail } from '../../utils/mailjet'
 
 export class UserService {
   async createUser ({

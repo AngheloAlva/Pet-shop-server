@@ -1,7 +1,7 @@
 import { CustomError } from '../../domain/errors/custom.error'
 
-import type { Request, Response } from 'express'
 import type { CategoryService } from './category.service'
+import type { Request, Response } from 'express'
 
 export class CategoryController {
   constructor (

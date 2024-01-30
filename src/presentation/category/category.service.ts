@@ -1,7 +1,11 @@
 import { CustomError } from '../../domain/errors/custom.error'
 import { prisma } from '../../domain/shared/prismaClient'
 
-import type { Category, CreateCategory, UpdateCategory } from '../../types/category.types'
+import type {
+  Category,
+  CreateCategory,
+  UpdateCategory
+} from '../../types/category.types'
 
 export class CategoryService {
   async createCategory ({

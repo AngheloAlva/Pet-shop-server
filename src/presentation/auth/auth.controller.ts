@@ -1,5 +1,5 @@
-import { envs } from '../../config/envs'
 import { CustomError } from '../../domain/errors/custom.error'
+import { envs } from '../../config/envs'
 
 import type { AuthService } from './auth.service'
 import type { Request, Response } from 'express'

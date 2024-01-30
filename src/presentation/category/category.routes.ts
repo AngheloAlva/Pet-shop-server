@@ -1,13 +1,16 @@
 /* eslint-disable @typescript-eslint/no-misused-promises */
 /* eslint-disable @typescript-eslint/no-extraneous-class */
 
-import { Router } from 'express'
-import { CategoryService } from './category.service'
-import { CategoryController } from './category.controller'
-import { createCategoryValidations, updateCategoryValidations } from '../../middleware/models-validations/category-validations'
-import { idValidation } from '../../middleware/id-validation'
-import { slugValidation } from '../../middleware/slug-validation'
 import { getAllModelValidation } from '../../middleware/get-all-model-validation'
+import { slugValidation } from '../../middleware/slug-validation'
+import { idValidation } from '../../middleware/id-validation'
+import { CategoryController } from './category.controller'
+import { CategoryService } from './category.service'
+import { Router } from 'express'
+import {
+  createCategoryValidations,
+  updateCategoryValidations
+} from '../../middleware/models-validations/category-validations'
 
 export class CategoryRoutes {
   static get routes (): Router {

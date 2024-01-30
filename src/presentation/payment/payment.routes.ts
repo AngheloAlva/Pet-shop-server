@@ -1,10 +1,10 @@
 /* eslint-disable @typescript-eslint/no-misused-promises */
 /* eslint-disable @typescript-eslint/no-extraneous-class */
 
-import { Router } from 'express'
-import { PaymentService } from './payment.service'
-import { PaymentController } from './payment.controller'
 import { createCheckoutSessionValidation } from '../../middleware/models-validations/payment-validations'
+import { PaymentController } from './payment.controller'
+import { PaymentService } from './payment.service'
+import { Router } from 'express'
 
 export class PaymentRoutes {
   static get routes (): Router {
