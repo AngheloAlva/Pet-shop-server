@@ -2,7 +2,7 @@ import type { Order } from './order.types'
 
 interface OrderItem {
   id: number
-  order: Order
+  order?: Order
   orderId: number
   productName: string
   productImage: string

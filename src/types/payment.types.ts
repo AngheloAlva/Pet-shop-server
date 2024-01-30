@@ -2,11 +2,11 @@ import type { Order } from './order.types'
 
 interface Payment {
   id: number
-  order: Order
+  order?: Order
   orderId: number
-  ammount: number
+  amount: number
   currency: string
-  stripeSessionId?: string
+  stripeSessionId?: string | null | undefined
   status: 'PENDING' | 'PAID' | 'FAILED'
   createdAt: Date
 }

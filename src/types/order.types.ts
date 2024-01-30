@@ -1,5 +1,5 @@
-import type { OrderItem } from './order-item.types'
 import type { Payment } from './payment.types'
+import type { OrderItem } from './order-item.types'
 
 interface Order {
   id: number
@@ -8,11 +8,19 @@ interface Order {
   shippingMethod: 'CHILEXPRESS' | 'STARKEN' | 'CORREOS_CHILE' | 'SHOP_PICKUP'
   addressId: number
   paid: boolean
-  checkoutSessionId?: string
+  checkoutSessionId?: string | null
   items: OrderItem[]
-  payment?: Payment
+  payment?: Payment | null | undefined
+}
+
+interface CreateOrder {
+  userId: number
+  shippingMethod: 'CHILEXPRESS' | 'STARKEN' | 'CORREOS_CHILE' | 'SHOP_PICKUP'
+  addressId: number
+  cartId: number
 }
 
 export {
-  type Order
+  type Order,
+  type CreateOrder
 }
