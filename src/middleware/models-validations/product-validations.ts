@@ -7,10 +7,10 @@ const lifeStages = ['PUPPY', 'ADULT', 'SENIOR', 'KITTEN', 'ALL_LIFE_STAGES']
 export const createProductValidation = [
   body('name').isString().notEmpty().isLength({ min: 3, max: 255 }),
   body('slug').isString().notEmpty().isLength({ min: 3, max: 255 }),
-  body('miniDesc').isString().notEmpty().isLength({ min: 20, max: 255 }),
+  body('miniDesc').isString().notEmpty().withMessage('Mini description must be a string'),
   body('description').isArray().notEmpty().withMessage('Description must be an array'),
   body('description.*.title').isString().notEmpty().isLength({ min: 3, max: 255 }),
-  body('description.*.content').isString().notEmpty().isLength({ min: 50, max: 1000 }),
+  body('description.*.content').isString().notEmpty(),
   body('images').isArray().notEmpty().withMessage('Images must be an array'),
   body('brandId').isNumeric().notEmpty().withMessage('Brand id must be a number'),
   body('categoryId').isNumeric().notEmpty().withMessage('Category id must be a number'),
