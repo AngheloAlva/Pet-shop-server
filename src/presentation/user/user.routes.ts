@@ -9,7 +9,8 @@ import { Router } from 'express'
 import {
   createUserValidation,
   emailValidation,
-  updateUserValidation
+  updateUserValidation,
+  verifyEmailValidation
 } from '../../middleware/models-validations/user-validations'
 
 export class UserRoutes {
@@ -19,6 +20,7 @@ export class UserRoutes {
     const controller = new UserController(service)
 
     router.post('/user', createUserValidation, controller.createUser)
+    router.post('/verify-email', verifyEmailValidation, controller.verifyEmail)
 
     router.get('/user', getAllModelValidation, controller.getAllUsers)
     router.get('/user/:id', idValidation, controller.getUserById)

@@ -22,6 +22,12 @@ export const updateUserValidation = [
   validate
 ]
 
+export const verifyEmailValidation = [
+  body('email').isEmail().withMessage('Email must be a valid email'),
+  body('verificationCode').isString().withMessage('Verification code must be a string'),
+  validate
+]
+
 export const emailValidation = [
   param('email').isEmail().withMessage('Email must be a valid email'),
   validate

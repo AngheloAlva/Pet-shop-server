@@ -66,6 +66,39 @@ export class UserService {
     }
   }
 
+  async verifyEmail (email: string, verificationCode: string): Promise<{ message: string }> {
+    try {
+      const user = await prisma.user.findUnique({
+        where: {
+          email
+        }
+      })
+
+      if (user == null) {
+        throw CustomError.notFound('User not found')
+      }
+
+      if (user.verificationCode !== verificationCode) {
+        throw CustomError.badRequest('Invalid verification code')
+      }
+
+      await prisma.user.update({
+        where: {
+          email
+        },
+        data: {
+          emailVerified: true
+        }
+      })
+
+      return {
+        message: 'Email verified successfully'
+      }
+    } catch (error) {
+      throw CustomError.internalServerError(error as string)
+    }
+  }
+
   async getUserById (id: number): Promise<User> {
     try {
       const user = await prisma.user.findUnique({

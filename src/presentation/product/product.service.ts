@@ -5,7 +5,8 @@ import type { AvailableWithPagination } from '../../types/shared.types'
 import type {
   Product,
   CreateProduct,
-  UpdateProduct
+  UpdateProduct,
+  UpdatedDataUpdatedProduct
 } from '../../types/products.types'
 
 export class ProductService {
@@ -13,6 +14,8 @@ export class ProductService {
     name, description, brandId, categoryId, options, images, lifeStage, miniDesc, petType, slug
   }: CreateProduct): Promise<Product> {
     try {
+      const descriptionString = JSON.stringify(description)
+
       const product = await prisma.product.create({
         data: {
           name,
@@ -23,7 +26,7 @@ export class ProductService {
           miniDesc,
           lifeStage,
           categoryId,
-          description,
+          description: descriptionString,
           options: {
             create: options
           }
@@ -94,9 +97,9 @@ export class ProductService {
     name, description, brandId, categoryId, images, lifeStage, miniDesc, petType, slug
   }: UpdateProduct): Promise<Product> {
     try {
-      const updatedData: UpdateProduct = {}
+      const updatedData: UpdatedDataUpdatedProduct = {}
 
-      if (description != null) updatedData.description = description
+      if (description != null) updatedData.description = JSON.stringify(description)
       if (categoryId != null) updatedData.categoryId = categoryId
       if (lifeStage != null) updatedData.lifeStage = lifeStage
       if (miniDesc != null) updatedData.miniDesc = miniDesc

@@ -85,6 +85,21 @@ export class UserController {
     }
   }
 
+  verifyEmail = async (req: Request, res: Response): Promise<Response> => {
+    try {
+      const { email, verificationCode } = req.body
+
+      const result = await this.userService.verifyEmail(
+        email as string,
+        verificationCode as string
+      )
+
+      return res.status(200).json(result)
+    } catch (error) {
+      return this.handleError(error, res)
+    }
+  }
+
   updateUser = async (req: Request, res: Response): Promise<Response> => {
     try {
       const { id } = req.params

@@ -2,25 +2,27 @@ import { body, param } from 'express-validator'
 import { validate } from '../validation'
 
 const petTypes = ['DOG', 'CAT', 'BIRD', 'FISH', 'REPTILE', 'SMALL_ANIMAL']
-const lifeStages = ['PUPPY', 'ADULT', 'SENIOR', 'KITTEN']
+const lifeStages = ['PUPPY', 'ADULT', 'SENIOR', 'KITTEN', 'ALL_LIFE_STAGES']
 
 export const createProductValidation = [
   body('name').isString().notEmpty().isLength({ min: 3, max: 255 }),
   body('slug').isString().notEmpty().isLength({ min: 3, max: 255 }),
   body('miniDesc').isString().notEmpty().isLength({ min: 20, max: 255 }),
-  body('description').isString().notEmpty().isLength({ min: 50, max: 1000 }),
+  body('description').isArray().notEmpty().withMessage('Description must be an array'),
+  body('description.*.title').isString().notEmpty().isLength({ min: 3, max: 255 }),
+  body('description.*.content').isString().notEmpty().isLength({ min: 50, max: 1000 }),
   body('images').isArray().notEmpty().withMessage('Images must be an array'),
   body('brandId').isNumeric().notEmpty().withMessage('Brand id must be a number'),
   body('categoryId').isNumeric().notEmpty().withMessage('Category id must be a number'),
   body('images.*').isString().notEmpty().withMessage('Images must be an array of strings'),
-  body('petType').notEmpty().isIn(petTypes).withMessage('Pet type must be one of: DOG, CAT, BIRD, FISH, REPTILE, SMALL_ANIMAL'),
+  body('petType').isArray().notEmpty().withMessage('Pet type must be an array'),
+  body('petType.*').notEmpty().isIn(petTypes).withMessage('Pet type must be one of: DOG, CAT, BIRD, FISH, REPTILE, SMALL_ANIMAL'),
   body('lifeStage').notEmpty().isIn(lifeStages).withMessage('Life stage must be one of: PUPPY, ADULT, SENIOR, KITTEN'),
   body('options').isArray().notEmpty().withMessage('Options must be an array'),
   body('options.*.name').isString().notEmpty().isLength({ min: 3, max: 255 }),
   body('options.*.price').isNumeric().notEmpty().withMessage('Option price must be a number'),
   body('options.*.stock').isNumeric().notEmpty().withMessage('Option stock must be a number'),
   body('options.*.discount').isNumeric().notEmpty().withMessage('Option discount must be a number'),
-  body('options.*.productId').isNumeric().notEmpty().withMessage('Option product id must be a number'),
   validate
 ]
 

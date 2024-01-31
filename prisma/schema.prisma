@@ -10,20 +10,12 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-enum PetType {
-  DOG
-  CAT
-  BIRD
-  FISH
-  REPTILE
-  SMALL_ANIMAL
-}
-
 enum LifeStage {
   PUPPY
   ADULT
   SENIOR
   KITTEN
+  ALL_LIFE_STAGES
 }
 
 enum ShippingMethod {
@@ -52,7 +44,7 @@ model Product {
   id            Int             @id   @default(autoincrement())
   category      Category        @relation(fields: [categoryId], references: [id])
   categoryId    Int
-  petType       PetType
+  petType       String[]
   name          String
   miniDesc      String
   description   String
