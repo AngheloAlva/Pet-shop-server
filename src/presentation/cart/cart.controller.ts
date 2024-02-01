@@ -30,9 +30,9 @@ export class CartController {
 
   getCart = async (req: Request, res: Response): Promise<Response> => {
     try {
-      const { userId } = req.body
+      const { userId } = req.params
 
-      const cart = await this.cartService.getCart(userId as number)
+      const cart = await this.cartService.getCart(Number(userId))
 
       return res.status(200).json(cart)
     } catch (error) {
@@ -105,9 +105,17 @@ export class CartController {
     try {
       const { userId } = req.body
 
-      const cart = await this.cartService.getCartInCheckout(userId as number)
+      const {
+        cart,
+        stockChanged,
+        optionChanged
+      } = await this.cartService.getCartInCheckout(userId as number)
 
-      return res.status(200).json(cart)
+      return res.status(200).json({
+        cart,
+        stockChanged,
+        optionChanged
+      })
     } catch (error) {
       return this.handleError(error, res)
     }

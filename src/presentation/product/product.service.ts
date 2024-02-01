@@ -48,7 +48,11 @@ export class ProductService {
           isAvailable
         },
         skip: (page - 1) * limit,
-        take: limit
+        take: limit,
+        include: {
+          brand: true,
+          options: true
+        }
       })
 
       return products
@@ -62,6 +66,11 @@ export class ProductService {
       const product = await prisma.product.findUnique({
         where: {
           id
+        },
+        include: {
+          brand: true,
+          options: true,
+          category: true
         }
       })
 
@@ -80,6 +89,11 @@ export class ProductService {
       const product = await prisma.product.findUnique({
         where: {
           slug
+        },
+        include: {
+          brand: true,
+          options: true,
+          category: true
         }
       })
 

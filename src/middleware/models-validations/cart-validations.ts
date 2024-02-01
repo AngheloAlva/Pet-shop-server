@@ -1,8 +1,13 @@
-import { body } from 'express-validator'
+import { body, param } from 'express-validator'
 import { validate } from '../validation'
 
 export const userIdValidation = [
   body('userId').isNumeric().withMessage('User id must be a number'),
+  validate
+]
+
+export const getCartValidation = [
+  param('userId').isNumeric().withMessage('User id must be a number'),
   validate
 ]
 

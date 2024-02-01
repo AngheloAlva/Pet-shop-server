@@ -172,7 +172,8 @@ export class AuthService {
           id: user.id
         },
         data: {
-          password: hashedPassword
+          password: hashedPassword,
+          resetPasswordToken: null
         }
       })
     } catch (error) {

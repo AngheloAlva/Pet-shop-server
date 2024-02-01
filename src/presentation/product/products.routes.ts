@@ -26,7 +26,7 @@ export class ProductRoutes {
 
     router.put('/product/:id', updateProductValidation, controller.updateProduct)
 
-    router.patch('/product/:id', idValidation, controller.restoreProduct)
+    router.patch('/product/activate/:id', idValidation, controller.restoreProduct)
 
     router.delete('/product/:id', idValidation, controller.deleteProduct)
 

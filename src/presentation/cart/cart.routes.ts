@@ -6,6 +6,7 @@ import { CartService } from './cart.service'
 import { Router } from 'express'
 import {
   addProductToCartValidation,
+  getCartValidation,
   removeProductFromCartValidation,
   updateProductQuantityValidation,
   userIdValidation
@@ -20,8 +21,8 @@ export class CartRoutes {
     router.post('/cart', userIdValidation, controller.createCart)
     router.post('/cart/add-product', addProductToCartValidation, controller.addProductToCart)
 
-    router.get('/cart', userIdValidation, controller.getCart)
-    router.get('/cart/checkout', userIdValidation, controller.getCartInCheckout)
+    router.get('/cart/:userId', getCartValidation, controller.getCart)
+    router.get('/cart/checkout/:userId', getCartValidation, controller.getCartInCheckout)
 
     router.put('/cart/update-product-quantity', updateProductQuantityValidation, controller.updateProductQuantity)
 

@@ -26,7 +26,7 @@ export class BrandRoutes {
 
     router.put('/brand/:id', updateBrandValidation, controller.updateBrand)
 
-    router.patch('/brand/:id', idValidation, controller.restoreBrand)
+    router.patch('/brand/activate/:id', idValidation, controller.restoreBrand)
 
     router.delete('/brand/:id', idValidation, controller.deleteBrand)
 

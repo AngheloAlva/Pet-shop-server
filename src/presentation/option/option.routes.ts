@@ -13,9 +13,9 @@ export class OptionRoutes {
     const service = new OptionService()
     const controller = new OptionController(service)
 
-    router.put('/:id', updateOptionValidation, controller.updateOption)
+    router.put('/option/:id', updateOptionValidation, controller.updateOption)
 
-    router.delete('/:id', idValidation, controller.deleteOption)
+    router.delete('/option/:id', idValidation, controller.deleteOption)
 
     return router
   }

@@ -7,10 +7,9 @@ import { UserController } from './user.controller'
 import { UserService } from './user.service'
 import { Router } from 'express'
 import {
-  createUserValidation,
   emailValidation,
-  updateUserValidation,
-  verifyEmailValidation
+  createUserValidation,
+  updateUserValidation
 } from '../../middleware/models-validations/user-validations'
 
 export class UserRoutes {
@@ -20,14 +19,13 @@ export class UserRoutes {
     const controller = new UserController(service)
 
     router.post('/user', createUserValidation, controller.createUser)
-    router.post('/verify-email', verifyEmailValidation, controller.verifyEmail)
 
     router.get('/user', getAllModelValidation, controller.getAllUsers)
     router.get('/user/:id', idValidation, controller.getUserById)
     router.get('/user/by-email/:email', emailValidation, controller.getUserByEmail)
 
     router.put('/user/:id', updateUserValidation, controller.updateUser)
-    router.patch('/user/:id', idValidation, controller.activateUser)
+    router.patch('/user/activate/:id', idValidation, controller.activateUser)
 
     router.delete('/user/:id', idValidation, controller.deleteUser)
 

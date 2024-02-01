@@ -25,7 +25,9 @@ export class OptionController {
         discount, price, stock
       })
 
-      return res.status(204).send()
+      return res.status(200).json({
+        message: 'Option updated successfully'
+      })
     } catch (error) {
       return this.handleError(error, res)
     }
@@ -37,7 +39,9 @@ export class OptionController {
 
       await this.optionService.deleteOption(Number(id))
 
-      return res.status(204).send()
+      return res.status(200).json({
+        message: 'Option deleted successfully'
+      })
     } catch (error) {
       return this.handleError(error, res)
     }
