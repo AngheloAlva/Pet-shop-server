@@ -1,43 +1,19 @@
-import { generateVerificationCode } from '../../helpers/verificationCodeGenerator'
 import { CustomError } from '../../domain/errors/custom.error'
 import { prisma } from '../../domain/shared/prismaClient'
-import { sendEmail } from '../../utils/mailjet'
-import bcrypt from 'bcrypt'
 
 import type { CreateUser, UpdateUser, User } from '../../types/user.types'
 import type { AvailableWithPagination } from '../../types/shared.types'
 
 export class UserService {
   async createUser ({
-    email, lastName, name, password, phone, rut
+    email, authId
   }: CreateUser): Promise<{ message: string }> {
     try {
-      const passwordHash = await bcrypt.hash(password, 10)
-
-      const verificationCode = generateVerificationCode(6)
-
       await prisma.user.create({
         data: {
-          rut,
-          name,
-          phone,
           email,
-          lastName,
-          verificationCode,
-          password: passwordHash
+          authId
         }
-      })
-
-      const subject = 'Verifica tu cuenta'
-      const text = `Tu código de verificación es ${verificationCode}`
-      const html = `<h1>Tu código de verificación es ${verificationCode}</h1>`
-
-      await sendEmail({
-        to: email,
-        name: `${name} ${lastName}`,
-        subject,
-        text,
-        html
       })
 
       return {
@@ -61,39 +37,6 @@ export class UserService {
       })
 
       return users
-    } catch (error) {
-      throw CustomError.internalServerError(error as string)
-    }
-  }
-
-  async verifyEmail (email: string, verificationCode: string): Promise<{ message: string }> {
-    try {
-      const user = await prisma.user.findUnique({
-        where: {
-          email
-        }
-      })
-
-      if (user == null) {
-        throw CustomError.notFound('User not found')
-      }
-
-      if (user.verificationCode !== verificationCode) {
-        throw CustomError.badRequest('Invalid verification code')
-      }
-
-      await prisma.user.update({
-        where: {
-          email
-        },
-        data: {
-          emailVerified: true
-        }
-      })
-
-      return {
-        message: 'Email verified successfully'
-      }
     } catch (error) {
       throw CustomError.internalServerError(error as string)
     }

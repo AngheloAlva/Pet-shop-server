@@ -1,18 +1,19 @@
 -- CreateEnum
-CREATE TYPE "PetType" AS ENUM ('DOG', 'CAT', 'BIRD', 'FISH', 'REPTILE', 'SMALL_ANIMAL');
-
--- CreateEnum
-CREATE TYPE "LifeStage" AS ENUM ('PUPPY', 'ADULT', 'SENIOR', 'KITTEN');
+CREATE TYPE "LifeStage" AS ENUM ('PUPPY', 'ADULT', 'SENIOR', 'KITTEN', 'ALL_LIFE_STAGES');
 
 -- CreateEnum
 CREATE TYPE "ShippingMethod" AS ENUM ('CHILEXPRESS', 'STARKEN', 'CORREOS_CHILE', 'SHOP_PICKUP');
+
+-- CreateEnum
+CREATE TYPE "PaymentStatus" AS ENUM ('PENDING', 'PAID', 'FAILED');
 
 -- CreateTable
 CREATE TABLE "Brand" (
     "id" SERIAL NOT NULL,
     "name" TEXT NOT NULL,
     "isAvailable" BOOLEAN NOT NULL DEFAULT true,
-    "image" TEXT,
+    "image" TEXT NOT NULL,
+    "slug" TEXT NOT NULL,
 
     CONSTRAINT "Brand_pkey" PRIMARY KEY ("id")
 );
@@ -21,7 +22,7 @@ CREATE TABLE "Brand" (
 CREATE TABLE "Product" (
     "id" SERIAL NOT NULL,
     "categoryId" INTEGER NOT NULL,
-    "petType" "PetType" NOT NULL,
+    "petType" TEXT[],
     "name" TEXT NOT NULL,
     "miniDesc" TEXT NOT NULL,
     "description" TEXT NOT NULL,
@@ -30,6 +31,7 @@ CREATE TABLE "Product" (
     "brandId" INTEGER NOT NULL,
     "isAvailable" BOOLEAN NOT NULL DEFAULT true,
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "slug" TEXT NOT NULL,
 
     CONSTRAINT "Product_pkey" PRIMARY KEY ("id")
 );
@@ -37,6 +39,7 @@ CREATE TABLE "Product" (
 -- CreateTable
 CREATE TABLE "Option" (
     "id" SERIAL NOT NULL,
+    "name" TEXT NOT NULL,
     "price" DOUBLE PRECISION NOT NULL,
     "stock" INTEGER NOT NULL,
     "discount" DOUBLE PRECISION NOT NULL,
@@ -50,10 +53,11 @@ CREATE TABLE "Option" (
 CREATE TABLE "Category" (
     "id" SERIAL NOT NULL,
     "name" TEXT NOT NULL,
+    "slug" TEXT NOT NULL,
     "description" TEXT NOT NULL,
     "image" TEXT NOT NULL,
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    "isAviable" BOOLEAN NOT NULL DEFAULT true,
+    "isAvailable" BOOLEAN NOT NULL DEFAULT true,
 
     CONSTRAINT "Category_pkey" PRIMARY KEY ("id")
 );
@@ -69,7 +73,11 @@ CREATE TABLE "User" (
     "role" TEXT NOT NULL DEFAULT 'USER',
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "isActive" BOOLEAN NOT NULL DEFAULT true,
-    "phone" TEXT,
+    "phone" TEXT NOT NULL,
+    "emailVerified" BOOLEAN NOT NULL DEFAULT false,
+    "refreshToken" TEXT,
+    "verificationCode" TEXT NOT NULL,
+    "resetPasswordToken" TEXT,
 
     CONSTRAINT "User_pkey" PRIMARY KEY ("id")
 );
@@ -90,6 +98,7 @@ CREATE TABLE "ProductCart" (
     "productId" INTEGER NOT NULL,
     "quantity" INTEGER NOT NULL,
     "optionSelectedIndex" INTEGER NOT NULL,
+    "addedAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
 
     CONSTRAINT "ProductCart_pkey" PRIMARY KEY ("id")
 );
@@ -98,6 +107,7 @@ CREATE TABLE "ProductCart" (
 CREATE TABLE "Address" (
     "id" SERIAL NOT NULL,
     "userId" INTEGER NOT NULL,
+    "name" TEXT NOT NULL,
     "street" TEXT NOT NULL,
     "number" TEXT NOT NULL,
     "zipCode" TEXT NOT NULL,
@@ -117,7 +127,7 @@ CREATE TABLE "Order" (
     "shippingMethod" "ShippingMethod" NOT NULL,
     "addressId" INTEGER NOT NULL,
     "paid" BOOLEAN NOT NULL DEFAULT false,
-    "checkoutSessionId" TEXT,
+    "checkoutSessionId" TEXT NOT NULL,
 
     CONSTRAINT "Order_pkey" PRIMARY KEY ("id")
 );
@@ -129,7 +139,7 @@ CREATE TABLE "Payment" (
     "amount" DOUBLE PRECISION NOT NULL,
     "currency" TEXT NOT NULL,
     "stripeSessionId" TEXT,
-    "status" TEXT NOT NULL,
+    "status" "PaymentStatus" NOT NULL,
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
 
     CONSTRAINT "Payment_pkey" PRIMARY KEY ("id")
@@ -139,14 +149,25 @@ CREATE TABLE "Payment" (
 CREATE TABLE "OrderItem" (
     "id" SERIAL NOT NULL,
     "orderId" INTEGER NOT NULL,
+    "productId" INTEGER NOT NULL,
     "productName" TEXT NOT NULL,
     "productImage" TEXT NOT NULL,
     "productDescription" TEXT NOT NULL,
     "productPrice" DOUBLE PRECISION NOT NULL,
+    "optionSelectedIndex" INTEGER NOT NULL,
     "quantity" INTEGER NOT NULL,
 
     CONSTRAINT "OrderItem_pkey" PRIMARY KEY ("id")
 );
+
+-- CreateIndex
+CREATE UNIQUE INDEX "Brand_slug_key" ON "Brand"("slug");
+
+-- CreateIndex
+CREATE UNIQUE INDEX "Product_slug_key" ON "Product"("slug");
+
+-- CreateIndex
+CREATE UNIQUE INDEX "Category_slug_key" ON "Category"("slug");
 
 -- CreateIndex
 CREATE UNIQUE INDEX "User_email_key" ON "User"("email");
@@ -195,3 +216,6 @@ ALTER TABLE "Payment" ADD CONSTRAINT "Payment_orderId_fkey" FOREIGN KEY ("orderI
 
 -- AddForeignKey
 ALTER TABLE "OrderItem" ADD CONSTRAINT "OrderItem_orderId_fkey" FOREIGN KEY ("orderId") REFERENCES "Order"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "OrderItem" ADD CONSTRAINT "OrderItem_productId_fkey" FOREIGN KEY ("productId") REFERENCES "Product"("id") ON DELETE RESTRICT ON UPDATE CASCADE;

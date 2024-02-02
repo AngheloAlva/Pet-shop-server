@@ -1,5 +1,5 @@
 import { UserRoutes } from './user/user.routes'
-import { AuthRoutes } from './auth/auth.routes'
+// import { AuthRoutes } from './auth/auth.routes'
 import { CartRoutes } from './cart/cart.routes'
 import { OrderRoutes } from './order/order.routes'
 import { BrandRoutes } from './brand/brand.routes'
@@ -11,7 +11,7 @@ import { CategoryRoutes } from './category/category.routes'
 
 export {
   UserRoutes,
-  AuthRoutes,
+  // AuthRoutes,
   CartRoutes,
   OrderRoutes,
   BrandRoutes,

@@ -1,2 +1,0 @@
--- AlterEnum
-ALTER TYPE "LifeStage" ADD VALUE 'ALL_LIFE_STAGES';

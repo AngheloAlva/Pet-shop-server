@@ -4,27 +4,23 @@ import type { Cart } from './cart.types'
 
 interface User {
   id: number
-  name: string
-  lastName: string
+  authId: string
+  name?: string | null
+  lastName?: string | null
   email: string
-  password: string
-  rut: string
-  role: string
+  rut?: string | null
+  role: string | null
   createdAt: Date
   isActive: boolean
   address?: Address[]
-  phone: string
+  phone?: string | null
   orders?: Order[]
   cart?: Cart
 }
 
 interface CreateUser {
-  name: string
-  lastName: string
   email: string
-  password: string
-  rut: string
-  phone: string
+  authId: string
 }
 
 interface UpdateUser {

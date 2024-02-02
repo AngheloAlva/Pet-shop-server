@@ -43,14 +43,20 @@ export class CartService {
   }
 
   async addProductToCart ({
-    cartId, optionSelectedIndex, productId, quantity, userId
+    optionSelectedIndex, productId, quantity, authId
   }: AddProductToCart): Promise<void> {
     try {
       await prisma.$transaction(async (prismaClient) => {
+        const user = await prismaClient.user.findUnique({
+          where: {
+            authId
+          }
+        })
+        if (user === null) throw CustomError.notFound('User not found')
+
         const cart = await prismaClient.cart.findUnique({
           where: {
-            userId,
-            id: cartId
+            userId: user.id
           }
         })
         if (cart === null) throw CustomError.notFound('Cart not found')
@@ -97,7 +103,7 @@ export class CartService {
           data: {
             quantity,
             productId,
-            cartId,
+            cartId: cart.id,
             optionSelectedIndex
           }
         })

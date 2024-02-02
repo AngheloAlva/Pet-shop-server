@@ -3,11 +3,7 @@ import { validate } from '../validation'
 
 export const createUserValidation = [
   body('email').isEmail().withMessage('Email must be a valid email'),
-  body('lastName').isString().withMessage('Last name must be a string'),
-  body('name').isString().withMessage('Name must be a string'),
-  body('password').isString().withMessage('Password must be a string'),
-  body('phone').isString().withMessage('Phone must be a string'),
-  body('rut').isString().withMessage('Rut must be a string'),
+  body('authId').isString().withMessage('AuthId must be a string'),
   validate
 ]
 

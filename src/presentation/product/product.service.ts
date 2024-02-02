@@ -14,7 +14,7 @@ export class ProductService {
     name, description, brandId, categoryId, options, images, lifeStage, miniDesc, petType, slug
   }: CreateProduct): Promise<Product> {
     try {
-      const descriptionString = JSON.stringify(description)
+      const descriptionString: string = JSON.stringify(description)
 
       const product = await prisma.product.create({
         data: {

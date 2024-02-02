@@ -42,11 +42,10 @@ export class CartController {
 
   addProductToCart = async (req: Request, res: Response): Promise<Response> => {
     try {
-      const { cartId, optionSelectedIndex, productId, quantity, userId } = req.body
+      const { optionSelectedIndex, productId, quantity, authId } = req.body
 
       await this.cartService.addProductToCart({
-        cartId,
-        userId,
+        authId,
         quantity,
         productId,
         optionSelectedIndex
