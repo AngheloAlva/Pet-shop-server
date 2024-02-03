@@ -1,7 +1,8 @@
+/* eslint-disable @typescript-eslint/naming-convention */
 import { CustomError } from '../../domain/errors/custom.error'
 
 import type { UserService } from './user.service'
-import type { Request, Response } from 'express'
+import { type Response, type Request } from 'express'
 
 export class UserController {
   constructor (
@@ -16,9 +17,11 @@ export class UserController {
     return res.status(500).json({ message: 'Internal server error' })
   }
 
-  createUser = async (req: Request, res: Response): Promise<Response> => {
+  createUser = async (req: Request, res: Response): Promise<any> => {
     try {
       const { email, authId } = req.body
+      console.log('email', email)
+      console.log('authId', authId)
 
       const result = await this.userService.createUser({
         email,
