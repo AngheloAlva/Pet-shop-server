@@ -45,9 +45,9 @@ export class OrderController {
 
   getOrdersByUserId = async (req: Request, res: Response): Promise<Response> => {
     try {
-      const { userId } = req.params
+      const { authId } = req.params
 
-      const orders = await this.orderService.getOrdersByUserId(Number(userId))
+      const orders = await this.orderService.getOrdersByUserId(authId)
 
       return res.status(200).json(orders)
     } catch (error) {

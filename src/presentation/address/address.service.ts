@@ -9,32 +9,45 @@ import type {
 
 export class AddressService {
   async createAddress ({
-    apartmentNumber, commune, isApartment, name, number, region, street, zipCode, userId
-  }: CreateAddress): Promise<void> {
+    apartmentNumber, commune, isApartment, name, number, region, street, zipCode, authId
+  }: CreateAddress): Promise<string> {
     try {
-      await prisma.address.create({
-        data: {
-          name,
-          number,
-          region,
-          street,
-          userId,
-          zipCode,
-          commune,
-          isApartment,
-          apartmentNumber
-        }
+      await prisma.$transaction(async (prismaClient) => {
+        const user = await prismaClient.user.findUnique({
+          where: {
+            authId
+          }
+        })
+        if (user === null) throw CustomError.notFound('User not found')
+
+        await prisma.address.create({
+          data: {
+            name,
+            number,
+            region,
+            street,
+            zipCode,
+            commune,
+            isApartment,
+            apartmentNumber,
+            userId: user.id
+          }
+        })
       })
+
+      return 'Address created successfully'
     } catch (error) {
       throw CustomError.internalServerError(error as string)
     }
   }
 
-  async getAddressByUserId (userId: number): Promise<Address[]> {
+  async getAddressByUserId (authId: string): Promise<Address[]> {
     try {
       const address = await prisma.address.findMany({
         where: {
-          userId
+          user: {
+            authId
+          }
         }
       })
       if (address === null) throw CustomError.notFound('Address not found')

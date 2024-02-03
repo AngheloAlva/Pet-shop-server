@@ -21,8 +21,8 @@ export class CartRoutes {
     router.post('/cart', userIdValidation, controller.createCart)
     router.post('/cart/add-product', addProductToCartValidation, controller.addProductToCart)
 
-    router.get('/cart/:userId', getCartValidation, controller.getCart)
-    router.get('/cart/checkout/:userId', getCartValidation, controller.getCartInCheckout)
+    router.get('/cart/:authId', getCartValidation, controller.getCart)
+    router.get('/cart/checkout/:authId', getCartValidation, controller.getCartInCheckout)
 
     router.put('/cart/update-product-quantity', updateProductQuantityValidation, controller.updateProductQuantity)
 

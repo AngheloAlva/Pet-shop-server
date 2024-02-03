@@ -19,7 +19,7 @@ export class AddressRoutes {
 
     router.post('/address', createAddressValidation, controller.createAddress)
 
-    router.get('/address/by-user/:userId', getAddressByUserIdValidation, controller.getAddressByUserId)
+    router.get('/address/by-user/:authId', getAddressByUserIdValidation, controller.getAddressByUserId)
     router.get('/address/:id', idValidation, controller.getAddressById)
 
     router.put('/address/:id', updateAddressValidation, controller.updateAddress)

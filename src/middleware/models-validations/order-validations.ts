@@ -8,6 +8,6 @@ export const getOrdersValidations = [
 ]
 
 export const getOrderByUserIdValidations = [
-  param('userId').isInt().notEmpty().withMessage('userId must be a number'),
+  param('authId').isString().notEmpty().withMessage('userId must be a number'),
   validate
 ]

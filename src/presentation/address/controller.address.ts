@@ -19,7 +19,7 @@ export class AddressController {
   createAddress = async (req: Request, res: Response): Promise<Response> => {
     try {
       const {
-        name, number, region, street, userId, commune, zipCode, isApartment, apartmentNumber
+        name, number, region, street, authId, commune, zipCode, isApartment, apartmentNumber
       } = req.body
 
       await this.addressService.createAddress({
@@ -27,7 +27,7 @@ export class AddressController {
         number,
         region,
         street,
-        userId,
+        authId,
         zipCode,
         commune,
         isApartment,
@@ -42,9 +42,9 @@ export class AddressController {
 
   getAddressByUserId = async (req: Request, res: Response): Promise<Response> => {
     try {
-      const { userId } = req.params
+      const { authId } = req.params
 
-      const address = await this.addressService.getAddressByUserId(Number(userId))
+      const address = await this.addressService.getAddressByUserId(authId)
 
       return res.status(200).json(address)
     } catch (error) {

@@ -3,7 +3,6 @@
 import { Router } from 'express'
 import {
   UserRoutes,
-  // AuthRoutes,
   CartRoutes,
   OrderRoutes,
   BrandRoutes,
@@ -19,7 +18,6 @@ export class AppRoutes {
     const router = Router()
 
     router.use('/api', UserRoutes.routes)
-    // router.use('/api', AuthRoutes.routes)
     router.use('/api', CartRoutes.routes)
     router.use('/api', OrderRoutes.routes)
     router.use('/api', BrandRoutes.routes)

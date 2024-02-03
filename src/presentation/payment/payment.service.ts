@@ -16,12 +16,12 @@ const stripe = new Stripe(envs.STRIPE_SECRET_KEY)
 
 export class PaymentService {
   async createCheckoutSession ({
-    orderId, productsCart, shippingMethod, userId
+    orderId, productsCart, shippingMethod, authId
   }: CreatePayment): Promise<void> {
     try {
       const user = await prisma.user.findUnique({
         where: {
-          id: userId
+          authId
         },
         include: {
           cart: true
@@ -95,7 +95,7 @@ export class PaymentService {
 
       const order = await prisma.order.create({
         data: {
-          userId,
+          userId: user.id,
           shippingMethod,
           addressId: 1,
           paid: false,

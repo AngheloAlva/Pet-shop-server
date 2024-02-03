@@ -18,7 +18,7 @@ export class OrderRoutes {
 
     router.get('/order/', getOrdersValidations, controller.getOrders)
     router.get('/order/:id', idValidation, controller.getOrderById)
-    router.get('/order/user/:userId', getOrderByUserIdValidations, controller.getOrdersByUserId)
+    router.get('/order/user/:authId', getOrderByUserIdValidations, controller.getOrdersByUserId)
 
     return router
   }

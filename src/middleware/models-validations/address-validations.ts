@@ -15,7 +15,7 @@ export const createAddressValidation = [
 ]
 
 export const getAddressByUserIdValidation = [
-  param('userId').isNumeric().notEmpty().withMessage('UserId is required'),
+  param('authId').isString().notEmpty().withMessage('UserId is required'),
   validate
 ]
 

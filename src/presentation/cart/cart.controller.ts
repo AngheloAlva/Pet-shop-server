@@ -18,9 +18,9 @@ export class CartController {
 
   createCart = async (req: Request, res: Response): Promise<Response> => {
     try {
-      const { userId } = req.body
+      const { authId } = req.body
 
-      await this.cartService.createCart(userId as number)
+      await this.cartService.createCart(authId as string)
 
       return res.status(201).json({ message: 'Cart created' })
     } catch (error) {
@@ -30,9 +30,9 @@ export class CartController {
 
   getCart = async (req: Request, res: Response): Promise<Response> => {
     try {
-      const { userId } = req.params
+      const { authId } = req.params
 
-      const cart = await this.cartService.getCart(Number(userId))
+      const cart = await this.cartService.getCart(authId)
 
       return res.status(200).json(cart)
     } catch (error) {
@@ -59,10 +59,10 @@ export class CartController {
 
   removeProductFromCart = async (req: Request, res: Response): Promise<Response> => {
     try {
-      const { productId, userId } = req.body
+      const { productId, authId } = req.body
 
       await this.cartService.removeProductFromCart(
-        userId as number,
+        authId as string,
         productId as number
       )
 
@@ -74,10 +74,10 @@ export class CartController {
 
   updateProductQuantity = async (req: Request, res: Response): Promise<Response> => {
     try {
-      const { productId, quantity, userId } = req.body
+      const { productId, quantity, authId } = req.body
 
       await this.cartService.updateProductQuantity(
-        userId as number,
+        authId as string,
         productId as number,
         quantity as number
       )
@@ -90,9 +90,9 @@ export class CartController {
 
   clearCart = async (req: Request, res: Response): Promise<Response> => {
     try {
-      const { userId } = req.body
+      const { authId } = req.body
 
-      await this.cartService.clearCart(userId as number)
+      await this.cartService.clearCart(authId as string)
 
       return res.status(200).json({ message: 'Cart cleared' })
     } catch (error) {
@@ -102,13 +102,13 @@ export class CartController {
 
   getCartInCheckout = async (req: Request, res: Response): Promise<Response> => {
     try {
-      const { userId } = req.body
+      const { authId } = req.body
 
       const {
         cart,
         stockChanged,
         optionChanged
-      } = await this.cartService.getCartInCheckout(userId as number)
+      } = await this.cartService.getCartInCheckout(authId as string)
 
       return res.status(200).json({
         cart,

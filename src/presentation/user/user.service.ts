@@ -12,7 +12,10 @@ export class UserService {
       await prisma.user.create({
         data: {
           email,
-          authId
+          authId,
+          cart: {
+            create: {}
+          }
         }
       })
 

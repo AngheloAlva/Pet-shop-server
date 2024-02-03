@@ -23,14 +23,14 @@ export class PaymentController {
         orderId,
         productsCart,
         shippingMethod,
-        userId
+        authId
       } = req.body
 
       await this.paymentService.createCheckoutSession({
         orderId,
         productsCart,
         shippingMethod,
-        userId
+        authId
       })
 
       return res.status(200).json({ message: 'Checkout session created' })

@@ -13,7 +13,7 @@ interface Payment {
 }
 
 interface CreatePayment {
-  userId: number
+  authId: string
   productsCart: ProductCart[]
   orderId: number
   shippingMethod: 'CHILEXPRESS' | 'STARKEN' | 'CORREOS_CHILE' | 'SHOP_PICKUP'

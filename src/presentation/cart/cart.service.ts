@@ -4,37 +4,57 @@ import { prisma } from '../../domain/shared/prismaClient'
 import type { AddProductToCart, Cart } from '../../types/cart.types'
 
 export class CartService {
-  async createCart (userId: number): Promise<void> {
+  async createCart (authId: string): Promise<string> {
     try {
-      await prisma.cart.create({
-        data: {
-          userId
-        }
+      await prisma.$transaction(async (prismaClient) => {
+        const user = await prismaClient.user.findUnique({
+          where: {
+            authId
+          }
+        })
+        if (user === null) throw CustomError.notFound('User not found')
+
+        await prismaClient.cart.create({
+          data: {
+            userId: user.id
+          }
+        })
       })
+
+      return 'Cart created successfully'
     } catch (error) {
       throw CustomError.internalServerError(error as string)
     }
   }
 
-  async getCart (userId: number): Promise<Cart> {
+  async getCart (authId: string): Promise<Cart> {
     try {
-      const cart = await prisma.cart.findFirst({
-        where: {
-          userId
-        },
-        include: {
-          products: {
-            include: {
-              product: {
-                include: {
-                  options: true
+      const cart = await prisma.$transaction(async (prismaClient) => {
+        const user = await prisma.user.findUnique({
+          where: {
+            authId
+          }
+        })
+        const cart = await prisma.cart.findFirst({
+          where: {
+            userId: user?.id
+          },
+          include: {
+            products: {
+              include: {
+                product: {
+                  include: {
+                    options: true
+                  }
                 }
               }
             }
           }
-        }
+        })
+        if (cart === null) throw CustomError.notFound('Cart not found')
+
+        return cart
       })
-      if (cart === null) throw CustomError.notFound('Cart not found')
 
       return cart
     } catch (error) {
@@ -113,12 +133,19 @@ export class CartService {
     }
   }
 
-  async removeProductFromCart (userId: number, productId: number): Promise<void> {
+  async removeProductFromCart (authId: string, productId: number): Promise<void> {
     try {
       await prisma.$transaction(async (prismaClient) => {
+        const user = await prismaClient.user.findUnique({
+          where: {
+            authId
+          }
+        })
+        if (user === null) throw CustomError.notFound('User not found')
+
         const cart = await prismaClient.cart.findUnique({
           where: {
-            userId
+            userId: user.id
           }
         })
         if (cart === null) throw CustomError.notFound('Cart not found')
@@ -135,12 +162,19 @@ export class CartService {
     }
   }
 
-  async updateProductQuantity (userId: number, productId: number, quantity: number): Promise<void> {
+  async updateProductQuantity (authId: string, productId: number, quantity: number): Promise<void> {
     try {
       await prisma.$transaction(async (prismaClient) => {
+        const user = await prismaClient.user.findUnique({
+          where: {
+            authId
+          }
+        })
+        if (user === null) throw CustomError.notFound('User not found')
+
         const cart = await prismaClient.cart.findUnique({
           where: {
-            userId
+            userId: user.id
           }
         })
         if (cart === null) throw CustomError.notFound('Cart not found')
@@ -160,12 +194,19 @@ export class CartService {
     }
   }
 
-  async clearCart (userId: number): Promise<void> {
+  async clearCart (authId: string): Promise<void> {
     try {
       await prisma.$transaction(async (prismaClient) => {
+        const user = await prismaClient.user.findUnique({
+          where: {
+            authId
+          }
+        })
+        if (user === null) throw CustomError.notFound('User not found')
+
         const cart = await prismaClient.cart.findUnique({
           where: {
-            userId
+            userId: user.id
           }
         })
         if (cart === null) throw CustomError.notFound('Cart not found')
@@ -182,61 +223,71 @@ export class CartService {
   }
 
   async getCartInCheckout (
-    userId: number
+    authId: string
   ): Promise<{ cart: Cart, stockChanged: boolean, optionChanged: boolean }> {
     try {
-      const cart = await prisma.cart.findFirst({
-        where: {
-          userId
-        },
-        include: {
-          products: {
-            include: {
-              product: {
-                include: {
-                  options: true
+      const { cart, stockChanged, optionChanged } = await prisma.$transaction(async (prismaClient) => {
+        const user = await prisma.user.findUnique({
+          where: {
+            authId
+          }
+        })
+
+        const cart = await prisma.cart.findFirst({
+          where: {
+            userId: user?.id
+          },
+          include: {
+            products: {
+              include: {
+                product: {
+                  include: {
+                    options: true
+                  }
                 }
               }
             }
           }
+        })
+        if (cart === null) throw CustomError.notFound('Cart not found')
+
+        let stockChanged: boolean = false
+        let optionChanged: boolean = false
+
+        for (const productCart of cart.products) {
+          const product = productCart.product
+          const selectedOption = product.options[productCart.optionSelectedIndex]
+
+          if (selectedOption.stock < productCart.quantity) {
+            await prisma.productCart.deleteMany({
+              where: {
+                productId: product.id,
+                cartId: cart.id
+              }
+            })
+
+            stockChanged = true
+          }
+
+          if (selectedOption.lastModified > productCart.addedAt) {
+            await prisma.productCart.delete({
+              where: {
+                id: productCart.id
+              }
+            })
+
+            optionChanged = true
+          }
+        }
+
+        return {
+          cart,
+          stockChanged,
+          optionChanged
         }
       })
-      if (cart === null) throw CustomError.notFound('Cart not found')
 
-      let stockChanged: boolean = false
-      let optionChanged: boolean = false
-
-      for (const productCart of cart.products) {
-        const product = productCart.product
-        const selectedOption = product.options[productCart.optionSelectedIndex]
-
-        if (selectedOption.stock < productCart.quantity) {
-          await prisma.productCart.deleteMany({
-            where: {
-              productId: product.id,
-              cartId: cart.id
-            }
-          })
-
-          stockChanged = true
-        }
-
-        if (selectedOption.lastModified > productCart.addedAt) {
-          await prisma.productCart.delete({
-            where: {
-              id: productCart.id
-            }
-          })
-
-          optionChanged = true
-        }
-      }
-
-      return {
-        cart,
-        stockChanged,
-        optionChanged
-      }
+      return { cart, stockChanged, optionChanged }
     } catch (error) {
       throw CustomError.internalServerError(error as string)
     }
