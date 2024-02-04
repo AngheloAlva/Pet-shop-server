@@ -1,7 +1,7 @@
 import { CustomError } from '../../domain/errors/custom.error'
 import { prisma } from '../../domain/shared/prismaClient'
 
-import type { AvailableWithPagination } from '../../types/shared.types'
+import type { GetProductsWithFilters } from '../../types/shared.types'
 import type {
   Product,
   CreateProduct,
@@ -40,22 +40,58 @@ export class ProductService {
   }
 
   async getAllProducts ({
-    limit, page, isAvailable
-  }: AvailableWithPagination): Promise<Product[]> {
-    try {
-      const products = await prisma.product.findMany({
-        where: {
-          isAvailable
-        },
-        skip: (page - 1) * limit,
-        take: limit,
-        include: {
-          brand: true,
-          options: true
-        }
-      })
+    page,
+    limit,
+    order,
+    search,
+    sortBy,
+    petType,
+    brandSlug,
+    maxPrice,
+    minPrice,
+    lifeStage,
+    categorySlug,
+    isAvailable,
+    isDiscounted
+  }: GetProductsWithFilters): Promise<{ products: Product[], total: number }> {
+    const filters: any = {
+      isAvailable
+    }
 
-      return products
+    if (petType != null) filters.petType = petType
+    if (lifeStage != null) filters.lifeStage = lifeStage
+    if (isDiscounted != null) filters.discount = { gt: 0 }
+    if (brandSlug != null) filters.brand = { slug: brandSlug }
+    if (minPrice != null) filters.price = { gte: Number(minPrice) }
+    if (categorySlug != null) filters.category = { slug: categorySlug }
+    if (maxPrice != null) filters.price = { ...filters.price, lte: Number(maxPrice) }
+
+    if (search != null) {
+      filters.OR = [
+        { name: { contains: search, mode: 'insensitive' } },
+        { description: { contains: search, mode: 'insensitive' } }
+      ]
+    }
+
+    const orderBy = (sortBy != null) ? { [sortBy]: order } : undefined
+
+    try {
+      const [total, products] = await Promise.all([
+        prisma.product.count({ where: filters }),
+        prisma.product.findMany({
+          where: filters,
+          skip: (page - 1) * limit,
+          take: limit,
+          orderBy,
+          include: {
+            brand: true,
+            options: true,
+            category: true
+          }
+        })
+      ])
+
+      return { total, products }
     } catch (error) {
       throw CustomError.internalServerError(error as string)
     }

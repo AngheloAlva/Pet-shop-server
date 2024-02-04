@@ -52,9 +52,24 @@ export class ProductController {
 
   getAllProducts = async (req: Request, res: Response): Promise<Response> => {
     try {
-      const { limit, page, isAvailable } = req.query
+      const {
+        limit,
+        page,
+        order,
+        search,
+        sortBy,
+        petType,
+        maxPrice,
+        minPrice,
+        lifeStage,
+        brandSlug,
+        categorySlug,
+        isDiscounted,
+        isAvailable
+      } = req.query
 
       let isAvailableParsed: boolean
+      let isDiscountedParsed: boolean | undefined
 
       if (isAvailable === 'true') {
         isAvailableParsed = true
@@ -64,13 +79,34 @@ export class ProductController {
         isAvailableParsed = true
       }
 
-      const products = await this.productService.getAllProducts({
-        isAvailable: isAvailableParsed,
+      if (isDiscounted === 'true') {
+        isDiscountedParsed = true
+      } else if (isDiscounted === 'false') {
+        isDiscountedParsed = false
+      } else {
+        isDiscountedParsed = undefined
+      }
+
+      const { products, total } = await this.productService.getAllProducts({
+        page: Number(page),
         limit: Number(limit),
-        page: Number(page)
+        order: order as string,
+        search: search as string,
+        sortBy: sortBy as string,
+        petType: petType as string,
+        maxPrice: maxPrice as string,
+        minPrice: minPrice as string,
+        lifeStage: lifeStage as string,
+        brandSlug: brandSlug as string,
+        isAvailable: isAvailableParsed,
+        isDiscounted: isDiscountedParsed,
+        categorySlug: categorySlug as string
       })
 
-      return res.status(200).json(products)
+      return res.status(200).json({
+        products,
+        total
+      })
     } catch (error) {
       return this.handleError(error, res)
     }
