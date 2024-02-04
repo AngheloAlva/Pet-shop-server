@@ -1,11 +1,14 @@
 import { body, param } from 'express-validator'
 import { validate } from '../validation'
 
+const petTypes = ['DOG', 'CAT', 'BIRD', 'FISH', 'REPTILE', 'SMALL_ANIMAL']
+
 export const createCategoryValidations = [
   body('name').isString().notEmpty().withMessage('Name is required'),
   body('description').isString().notEmpty().withMessage('Description is required'),
   body('image').isString().notEmpty().withMessage('Image is required'),
   body('slug').isString().notEmpty().withMessage('Slug is required'),
+  body('petType').isIn(petTypes).notEmpty().withMessage('Pet type is required'),
   validate
 ]
 

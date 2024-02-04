@@ -25,6 +25,15 @@ enum ShippingMethod {
   SHOP_PICKUP
 }
 
+enum PetType {
+  DOG
+  CAT
+  BIRD
+  FISH
+  REPTILE
+  SMALL_ANIMAL
+}
+
 enum PaymentStatus {
   PENDING
   PAID
@@ -79,6 +88,7 @@ model Category {
   image         String
   createdAt     DateTime    @default(now())
   products      Product[]
+  petType       PetType     @default(DOG)
   isAvailable   Boolean     @default(true)
 }
 

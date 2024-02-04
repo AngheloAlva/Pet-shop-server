@@ -1,3 +1,4 @@
+import type { PetType } from '@prisma/client'
 import type { Product } from './products.types'
 
 interface Category {
@@ -6,6 +7,7 @@ interface Category {
   slug: string
   description: string
   image: string
+  petType: PetType
   createdAt: Date
   products?: Product[]
   isAvailable: boolean
@@ -16,6 +18,7 @@ interface CreateCategory {
   slug: string
   description: string
   image: string
+  petType: PetType
 }
 
 interface UpdateCategory {

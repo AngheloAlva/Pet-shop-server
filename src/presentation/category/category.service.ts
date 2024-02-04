@@ -9,15 +9,16 @@ import type {
 
 export class CategoryService {
   async createCategory ({
-    name, description, image, slug
+    name, description, image, slug, petType
   }: CreateCategory): Promise<Category> {
     try {
       const category = await prisma.category.create({
         data: {
           name,
-          description,
+          slug,
           image,
-          slug
+          petType,
+          description
         }
       })
 

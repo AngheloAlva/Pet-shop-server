@@ -20,8 +20,6 @@ export class UserController {
   createUser = async (req: Request, res: Response): Promise<any> => {
     try {
       const { email, authId } = req.body
-      console.log('email', email)
-      console.log('authId', authId)
 
       const result = await this.userService.createUser({
         email,

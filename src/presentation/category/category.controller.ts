@@ -2,6 +2,7 @@ import { CustomError } from '../../domain/errors/custom.error'
 
 import type { CategoryService } from './category.service'
 import type { Request, Response } from 'express'
+import type { PetType } from '@prisma/client'
 
 export class CategoryController {
   constructor (
@@ -18,10 +19,14 @@ export class CategoryController {
 
   createCategory = async (req: Request, res: Response): Promise<Response> => {
     try {
-      const { name, description, image, slug } = req.body
+      const { name, description, image, slug, petType } = req.body
 
       const category = await this.categoryService.createCategory({
-        name, description, image, slug
+        name,
+        description,
+        image,
+        slug,
+        petType: petType as PetType
       })
 
       return res.status(201).json(category)
