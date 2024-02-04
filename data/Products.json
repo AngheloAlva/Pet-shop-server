@@ -1,0 +1,748 @@
+[
+  {
+        "categoryId": 5,
+        "petType": ["DOG"],
+        "name": "Acana Classic Prarie Poultry",
+        "miniDesc": "ACANA Prarie Poultry contiene pollo y pavo criados en libertad además de huevos, todo entregado FRESCO o CRUDO diariamente en índices WholePrey, proveniente de granjas locales.",
+        "description": [
+            {
+                "title":"Descripcion General",
+                "content":"ACANA Prairie Poultry contiene 3 tipos de carne fresca en índices WholePrey que incluyen carne, órganos y cartílago para aportar nutrientes de forma completa y natural. Pollo criado en libertad - carne, hígado, corazón, riñón y cartílago, todo fresco proveniente nuestras granjas locales. Pavo criado en libertad - carne, hígado, corazón, riñón y cartílago, todo fresco proveniente nuestras granjas locales Huevos de nido - frescos y provenientes de nuestras granjas locales."
+            },
+            {
+                "title":"INGREDIENTES:",
+                "content":"Pollo deshidratado (25%), granos de avena (25%), pollo fresco (8%), menudillos de pollo frescos (hígado, corazón) (5%), pavo crudo (4,5%), grasa de pollo (4%), lentejas rojas enteras, avena entera (4%),  guisantes verdes enteros, lentejas verdes, pavo fresco (4%), huevo entero fresco (4%), grasa de pollo (4%), guisantes enteros, aceite de pescado (3%), alfalfa, fibra de lentejas, garbanzo enteros, higado de pavo crudo (0,5%), sal, algas ,marinas secas, calabaza fresca entera, calabaza butternut entera fresca, zanahorias frescas, manzanas frescas, peras frescas, calabacin entero fresco, raiz de achicoria seca, col rizada fresca, espinacas frescas, hojas de nabo frescas, hojas de remolacha frescas,  arándanos rojos enteros, arandanos azules enteros, bayas de Saskallon enteras, cúrcuma, cardo lechoso, raiz de bardana, lavanda, raiz de malvavisco , escaramujos."
+            },
+            {
+                "title":"ADITIVOS (por kg)",
+                "content":"Aditivos tecnológicos: extracto rico en tocoferol de origen natural. Aditivos nutricionales: vitamina E: 200 UI, cloruro de colina: 500 mg, quelato de zinc de aminoácidos hidratados: 100 mg, vitamina B5: 12,5 mg, Quelato de cobre de aminoácidos hidratados: 10mg. Aditivos zootécnicos: Enterococcus faecium NCIMB10415: 600×10 ^ 6 UFC."
+            },
+            {
+                "title":"ANALISIS GARANTIZADO",
+                "content":"Proteína cruda (mín.)29 % \n Grasa bruta (mín.)17 % \n Cendres bruta (máx.)7.5 % \n Fibra bruta (máx.)5 % \n Humedad (máx.)12 % \n Calcio (mín.)1.3 % \n Fósforo (mín.)1.0 % \n Omega-6 fatty acids (min.)2.6 % \n Omega-3 fatty acids (min.)0.5 % \n DHA (mín.)0.1 % \n EPA (mín.)0.1 % \n Glucosamina (mín.)1200 mg/kg \n Sulfato de condroitina (mín.)900 mg/kg \n Linoleic acid (min.)2.4 % \n Carbohydrate ( NFE)29.5 %"
+            },
+            {
+                "title":"Características",
+                "content":"Acana Prairie Poultry es un pienso natural para perros que contiene proteínas de alta calidad, como pollo y pavo criados en libertad además de huevos, ingredientes totalmente frescos y crudos para añadir a la preparación. \n Esta dieta completa para perros no contiene cereales de alto índice glucémico, de hecho este pienso natural está lleno de nutritivas proteínas animales y ácidos grasos omega-3 que le ayudan a estar en buena forma y proteger su piel y su pelaje.  \n Así mismo, está presente la avena de bajo índice glucémico que favorece los niveles estables de azúcar en sangre y ayudar a reducir la acumulación potencial de grasa en el cuerpo, colaborando en el mantenimiento del peso ideal de tu mascota."
+            },
+            {
+                "title":"Beneficios",
+                "content":"Contiene proteínas naturales \n Protege la piel de tu mascota \n Ayuda a mantener el peso de tu perro"
+            }
+        ],
+        "images": [ "https://cdn11.bigcommerce.com/s-d331r3r4ex/images/stencil/1280x1280/products/21968/46433/prairie_poultry__85891__80157.1706533936.jpg?c=1?imbypass=on", "https://cdn11.bigcommerce.com/s-d331r3r4ex/images/stencil/1280x1280/products/21968/46435/praire_back__09644__69862.1706533937.jpg?c=1?imbypass=on", "https://cdn11.bigcommerce.com/s-d331r3r4ex/images/stencil/1280x1280/products/21968/46434/praire__49328__01949.1706533936.jpg?c=1?imbypass=on"],
+        "slug": "acana-classic-prarie-poultry",
+        "lifeStage": "ALL_LIFE_STAGES",
+        "brandId": 25,
+        "options": [
+            {
+                "name": "9.7 kg",
+                "price": 56990,
+                "stock": 2,
+                "discount": 0
+            },
+            {
+                "name": "5.9 kg",
+                "price": 38990,
+                "stock": 2,
+                "discount": 0
+            },
+            {
+                "name": "2 kg",
+                "price": 17990,
+                "stock": 1,
+                "discount": 0
+            }
+        ]
+    },
+  {
+      "categoryId": 5,
+      "petType": [
+          "DOG"
+      ],
+      "name": "Acana Dog Classic Wild Coast",
+      "miniDesc": "Acana Puppy & Junior is a food made with free-range chicken, turkey, wild fish and whole eggs from the nest in WholePrey™ proportions to fully nourish your puppy. Prepared in DogStar® kitchens in Kentucky with fresh, regional ingredients. Unique and Biologically Appropriate™, a delicious and natural way to keep your dog healthy, happy and strong.",
+      "description": [
+            {
+                "title":"General description",
+                "content":"Acana® CLASSICS WILD COAST is a special food for dogs, it is free of high glycemic index grains and is made with fish \n Suitable for dogs of all ages and breeds. Made with fish, caught wild in Northern Vancouver Island and delivered to our kitchens FRESH and WHOLE, so it's bursting with quality and flavor. \n Free of high-glycemic grains, ACANA is packed with nutritious fish proteins and omega-3 fatty acids to help keep you fit. To support stable blood sugar levels and help reduce potential fat accumulation, ACANA Classics contain low-glycemic oats."
+            },
+            {
+                "title":"Benefits:",
+                "content":"Ingrediente Animales Premium: Contiene un 50% de abundante proteína nutritiva, alimentando sus dosis diarias totales \n Plus de Vitaminas y Minerales: Contiene verduras y frutas frescas, lo que le da a tu mascota a tener un plus de vitaminas y minerales esenciales en su dieta. \n Carbohidratos Limitados: La dieta natural de tu perro contiene pocos carbohidratos, que están reconocidos como la principal causa de obesidad y diabetes. Por esta razón ACANA limita los carbohidratos a la mitad respecto a los tipos de comida convencionales y contiene avena como única fuente cereal de bajo índice glucémico. La avena entra gradualmente al flujo sanguíneo, evitando repuntes de azúcar en sangre y reduciendo la acumulación de grasa. \n Biológicamente Apropiado: Contiene la cantidad apropiada de proteína animal, para que tu mascota reciba la dosis diaria apropiada. \n PresaEntera: Las proporciones de PresaEntera (WholePrey), ricas en nutrientes, de carnes, órganos y cartílagos frescos además de pescado y huevos enteros y frescos, proveen una fuente natural de prácticamente cada uno de los nutrientes que tu mascota necesita. n Fresco y Local: Utiliza ingredientes frescos de origen local, para mantener su frescura y calidad."
+            }
+        ],
+      "images": ["https://cdn11.bigcommerce.com/s-d331r3r4ex/images/stencil/608x608/products/21530/45785/601221__16426.1698239821.jpg?c=1", "https://cdn11.bigcommerce.com/s-d331r3r4ex/images/stencil/608x608/products/21530/43704/acana-dog-classic-wild-coast_2x9RS__51281.1698239819.jpg?c=1", "https://cdn11.bigcommerce.com/s-d331r3r4ex/images/stencil/608x608/products/21530/43705/acana-dog-classic-wild-coast_9ACNo__26901.1698239819.jpg?c=1", "https://cdn11.bigcommerce.com/s-d331r3r4ex/images/stencil/608x608/products/21530/43706/acana-dog-classic-wild-coast_kh68P__47692.1698239819.jpg?c=1"],
+      "lifeStage": "ALL_LIFE_STAGES",
+      "brandId": 25,
+      "slug": "acana-dog-classic-wild-coast",
+      "options": [
+          {
+              "name": "9.7 kg",
+              "price": 56990,
+              "stock": 4,
+              "discount": 0
+          },
+          {
+              "name": "5.9 kg",
+              "price": 39990,
+              "stock": 0,
+              "discount": 0
+          },
+          {
+              "name": "2 kg",
+              "price": 17990,
+              "stock": 3,
+              "discount": 0
+          }
+      ]
+  },
+  {
+      "categoryId": 5,
+      "petType": [
+          "DOG"
+      ],
+      "name": "Acana Dog Puppy",
+      "miniDesc": "ACANA Puppy & Junior es un alimento para perros de razas pequeñas y medianas, es un alimento biológicamente adecuado para cachorros.",
+      "description": [{"title":"General description","content":"Acana Dog Puppy es un alimento elaborado con pollo de corral, pavo, pescado salvaje y huevos enteros del nido en proporciones de PresaEntera para nutrir a tu cachorro por completo. Preparado en las cocinas DogStar® en Kentucky con ingredientes frescos y regionales. Único y Biológicamente Apropiado, una deliciosa y natural forma de mantener a tu perro saludable, feliz y fuerte."},{"title":"Benefits","content":"Premium Animals Ingredient: Contains 60% abundant nutritious protein, fueling your total daily doses. \n Plus Vitamins and Minerals: Contains fresh vegetables and fruits, which gives your pet extra essential vitamins and minerals in their diet. \n Gluten Free: No grains, potatoes and gluten. \n Biologically Appropriate: Contains the appropriate amount of animal protein, so that your pet receives the appropriate daily dose. \n WholePrey: WholePrey's nutrient-rich proportions of fresh meats, organs and cartilage plus whole, fresh fish and eggs provide a natural source of virtually every nutrient your pet needs. \n Fresh and Local: Uses fresh, locally sourced ingredients to maintain their freshness and quality."},{"title":"Ingredients","content":"Boneless turkey, boneless chicken, chicken meal, turkey flour, whole red lentils, whole green peas, whole yellow peas, chicken fat, Atlantic sole, haddock oil, chicken giblets, lentil fiber, whole eggs, broth chicken, whole green lentils, whole pinto beans, whole chickpeas, natural chicken flavor, chicken cartilage, sea salt, mixed tocopherols (preservative), whole squash, collard greens, whole carrots, seaweed, zinc protein, freeze-dried turkey liver , calcium pantothenate, thiamine mononitrate, copper proteinate, chicory root, turmeric, sarsaparilla root, althea root, rose hips, juniper berries, fermentation product of dried lactobacillus acidophilus, fermentation product of dried bifidobacterium animalis, product of dry lactobacillus casei fermentation."},{"title":"Guaranteed Analysis","content":"Crude protein (min.) 31% \n Gross fat (min.) 19% \n Gross fiber (max.) 5% \n Humidity (max.) 12% \n DHA (docosahexaenoic acid) (min.) 0.4% \n EPA (eicosapentaenoic acid) (min.) 0.2% \n Calcium (min.) 1.2% Phosphorus (min.) 1% \n Omega-6 fatty acids * (min.) 2.3% \n Omega-3 fatty acids * (min.) 1.3% \n Glucosamine * (min.) 800 mg/kg \n Total microorganisms * (min.) (Lactobacillus acidophilus, Bifidobacterium animalis, Lactobacillus casei) 100MM CFU/lb"}],
+      "images": [
+          "https://cdn11.bigcommerce.com/s-d331r3r4ex/images/stencil/608x608/products/21534/43710/4665__88997.1691699308.jpg?c=1"
+      ],
+      "lifeStage": "PUPPY",
+      "brandId": 25,
+      "slug": "acana-dog-puppy",
+      "options": [
+          {
+              "name": "11.35 kg",
+              "price": 56990,
+              "stock": 0,
+              "discount": 0
+          },
+          {
+              "name": "5.9 kg",
+              "price": 43990,
+              "stock": 3,
+              "discount": 10
+          },
+          {
+              "name": "2 kg",
+              "price": 20490,
+              "stock": 1,
+              "discount": 10
+          }
+      ]
+  },
+  {
+      "categoryId": 6,
+      "petType": [
+          "CAT"
+      ],
+      "name": "Acana Indoor Entrée Cat",
+      "miniDesc": "Acana Indoor Entrée Cat is a complete and formulated food for cats that live indoors. Acana Indoor Entrée will help you receive all the nutrients you need to stay strong and healthy and will provide you with fewer calories.",
+      "description": [{"title":"General description","content":"Acana Indoor Entrée Cat is a complete and formulated food for cats that live indoors. Acana Indoor Entrée will help you receive all the nutrients you need to stay strong and healthy and will provide you with fewer calories to help you maintain a healthy weight. Formulated with 65% meat, such as chicken, turkey and rabbit, as well as fish, such as herring; 4 types of different proteins that will strengthen your muscles and bones, in addition to protecting your skin and keeping your hair shiny."},{"title":"Benefits","content":"Alimento natural de alta calidad pensado para gatos de interior.\n Contiene 4 tipos de proteínas.\n Incorpora un 65% de carne.\n Mantiene sus músculos y huesos fuertes.\n Bajo en calorías para mantener su peso equilibrado y sano.\n Ayuda a reducir el PH de la orina."},{"title":"Ingredients","content":"Boneless chicken, chicken meal, herring meal, oats, whole peas, chicken fat, ground miscanthus grass, boneless turkey, whole green lentils, whole chickpeas, whole herring, natural chicken flavor, lentil fiber, boneless rabbit, cartilage chicken, chicken liver, chicken heart, whole cranberries, dried seaweed, choline chloride, zinc proteinate, mixed tocopherols (preservative), vitamin E supplement, taurine, vitamin D3 supplement, vitamin A acetate, L- carnitine, DL-methionine, copper proteinate, niacin, thiamine mononitrate, riboflavin, calcium pantothenate, pyridoxine hydrochloride, folic acid, vitamin B12 supplement, biotin, ascorbic acid (vitamin C), citric acid (preservative), extract of rosemary, fermentation product of dry Lactobacillus acidophilus, fermentation product of Bi ? dried dobacterium animalis, dried Lactobacillus casei fermentation product METABOLIZABLE ENERGY: 3630 kcal/kg (414 kcal per 8 fluid ounce cup), with 39% protein, 29% carbohydrates and 32% fat. The ACANA Indoor Entree recipe is formulated to meet the nutritional levels established by the AAFCO Cat Food Nutrient Profiles for Adult Maintenance."},{"title":"Guaranteed Analysis","content":"Proteína 37% \n Contenido de grasa 14% \n Materia inorgánica 9% \n Fibra bruta 6% \n Humedad 10% \n Calcio 1,4% \n Fósforo 1% \n Magnesio 0,1% \n Taurina 0,1% \n Omega-6 2% \n Omega-3 0,5% \n DHA 0,2% \n EPA 0,1%."}],
+      "images": [
+          "https://cdn11.bigcommerce.com/s-d331r3r4ex/images/stencil/608x608/products/21539/43715/4670__23800.1691699316.jpg?c=1"
+      ],
+      "lifeStage": "ADULT",
+      "brandId": 25,
+      "slug": "acana-indoor-entree-cat",
+      "options": [
+          {
+              "name": "1.8 kg",
+              "price": 22990,
+              "stock": 2,
+              "discount": 0
+          },
+          {
+              "name": "4.5 kg",
+              "price": 47990,
+              "stock": 2,
+              "discount": 10
+          }
+      ]
+  },
+  {
+      "categoryId": 6,
+      "petType": [
+          "CAT"
+      ],
+      "name": "Acana Cat First Feast",
+      "miniDesc": "Complete and prepared food for your kitten's first months. Its formula made with 70% small prey animals provides them with all the nutrients they need to grow and develop correctly.",
+      "description": [{"title":"General description","content":"Your little bobcat needs the right kitten fuel and plenty of naps. When you pour ACANA First Feast dry kitten food into her bowl, you can be sure she'll have all the nutrition she needs for all her kitty antics. \n First Feast includes 70%* quality animal ingredients, such as free-range chicken and whole herring, delivered fresh or raw and completely free of flavors, preservatives or colors."},{"title":"Benefits","content":"Packed with high-quality protein for muscle and bone development. \n Taurine, DHA and EPA help maintain healthy cognitive and retinal function. \n Omega fatty acids help keep your kitty's coat and skin looking shiny and healthy. \n The ingredients and the liver of small game create an appetizing flavor. \n Made in USA"},{"title":"Ingredients","content":"Boneless chicken, chicken meal, herring meal, oats, whole peas, chicken fat, whole green lentils, turkey flour, whole chickpeas, whole herring, eggs, haddock oil, natural chicken flavor, lentil fiber, quail boneless, chicken cartilage, chicken liver, chicken heart, whole cranberries, dried seaweed, choline chloride, zinc proteinate, mixed tocopherols (preservative), vitamin E supplement, taurine, vitamin D3 supplement, vitamin A acetate , L-carnitine, Dl-methionine, copper proteinate, niacin, thiamine Mononitrate, Riboflavin, Calcium Pantothenate, Pyridoxine Hydrochloride, Folic Acid, Vitamin B12 Supplement, Biotin, Ascorbic Acid (Vitamin C), Citric Acid (Preservative) , Rosemary Extract, Dry Lactobacillus Acidophilus Fermentation Product, Dry Bifidobacterium Animalis Fermentation Product, Dry Lactobacillus casei Fermentation Product."}],
+      "images": [
+          "https://cdn11.bigcommerce.com/s-d331r3r4ex/images/stencil/608x608/products/21538/43714/4669__66785.1691699315.jpg?c=1"
+      ],
+      "lifeStage": "ADULT",
+      "brandId": 25,
+      "slug": "acana-cat-first-feast",
+      "options": [
+          {
+              "name": "1.8 kg",
+              "price": 22990,
+              "stock": 2,
+              "discount": 0
+          }
+      ]
+  },
+  {
+      "categoryId": 6,
+      "petType": [
+          "CAT"
+      ],
+      "name": "Acana Gato Meadowland",
+      "miniDesc": "Acana Meadowland Cat is a cat food made with 75% meat and 25% vegetables. This cat food is made with Cobb Chicken, Tom Turkey, Nest Eggs, Blue Catfish, and Rainbow Trout in WholePrey™ ratios. Prepared in DogStar® kitchens in Kentucky with the freshest ingredients guaranteed to keep your cat healthy and happy.",
+      "description": [{"title":"General description","content":"Biologically appropriate for all stages of growth. \n *Free-range chicken, freshwater fish, whole nest eggs \n Reflecting the fertile Kentucky prairies, Kentucky-inspired cat foods feature free-range poultry and turkey, whole nest eggs, freshwater fish , as well as, whole vegetables and fruits from local farms. \nWith 75% meat, ACANA Meadowland contains free-range chicken, turkey, nest eggs, blue catfish and rainbow trout. Our meat is delivered fresh or raw daily in Whole Prey ratios to mirror your cat's evolving diet and promote optimal health without long lists of supplements or synthetic additives. \nPrepared in our DogStar kitchens in Kentucky with the best and freshest ingredients in America, ACANA Meadowland is guaranteed to keep your cat healthy, happy and strong."},{"title":"ALL ABOUT MEAT","content":"Domestic cats are designed like their ancestors and we believe that they should eat as their ancestors did. How do you know if your cat's food is Biologically Appropriate? It's simple, just answer our three Biologically Appropriate questions about meat. \n Boneless chicken, chicken meal, herring meal, oats, whole peas, chicken fat, whole green lentils, turkey flour, whole chickpeas, whole herring, eggs, haddock oil, natural chicken flavor, lentil fiber, quail boneless, chicken cartilage, chicken liver, chicken heart, whole cranberries, dried seaweed, choline chloride, zinc proteinate, mixed tocopherols (preservative), vitamin E supplement, taurine, vitamin D3 supplement, vitamin A acetate , L-carnitine, Dl-methionine, copper proteinate, niacin, thiamine Mononitrate, Riboflavin, Calcium Pantothenate, Pyridoxine Hydrochloride, Folic Acid, Vitamin B12 Supplement, Biotin, Ascorbic Acid (Vitamin C), Citric Acid (Preservative) , Rosemary Extract, Dry Lactobacillus Acidophilus Fermentation Product, Dry Bifidobacterium Animalis Fermentation Product, Dry Lactobacillus casei Fermentation Product. \n ¿CUÁNTA CARNE? \n Completamente libre de concentrados de proteínas vegetales, ACANA Meadowland contiene un 75% de aves de corral, pescado y huevos -más del doble que la mayoría de los alimentos especializados para gatos. Además, todas nuestras carnes están consideradas aptas para el consumo humano previo a su inclusión en nuestros alimentos. \n ¿CUÁNTA CARNE FRESCA? \n El 50% de los ingredientes de carne en ACANA Meadowland son FRESCOS o CRUDOS, aportando nutrientes esenciales en su forma más nutritiva. Fresco quiere decir nunca congelado, así que la refrigeración es la única manera en la que preservamos nuestras carnes frescas, mientras que las carnes crudas son ultra congeladas de inmediato para conservar toda su calidad. La otra mitad de los ingredientes de carne es seca o con aceites, ofreciendo una fuente natural de rica y nutritiva proteína y grasa animal. \n ¿CUANTAS CARNES? \n ACANA Meadowland ofrece 5 carnes frescas en proporciones de PresaEntera, incluyendo carne altamente nutritiva, órganos, cartílago, los cuales aportan nutrientes de una forma completamente natural. \n Pollo y pavo de corral -carne, hígado, riñones y cartílago frescos de granjas locales. \n Huevos del nido -enteros y frescos de granjas locales de Kentucky. \n Bagre azul entero -entero y fresco de las aguas de Kentucky. \n Trucha arcoíris -fresca o cruda de los ríos acuíferos Snake en Idaho."},{"title":"LIMITED SUPPLEMENTS ADDED","content":"There are no synthetic supplements in Mother Nature's kitchen, and wild cats obtain all of their dietary requirements by consuming whole prey animals. Muscle meat provides protein; the liver, kidneys and intestines offer vitamins and minerals; while bones and cartilage provide calcium and phosphorus. \n ACANA WholePrey foods incorporate meats, organs and cartilage in proportions that resemble Mother Nature, offering nutrients naturally; So you won't find long lists of synthetic supplements - only choline, zinc and copper are added."},{"title":"Ingredients","content":"Boneless chicken, boneless turkey, chicken liver, dried chicken, dried catfish, whole green peas, red lentils, pinto beans, dried haddock, chicken fat, chickpeas, green lentils, whole yellow peas, catfish, whole eggs, rainbow trout, herring oil, lentil fiber, chicken heart, chicken kidneys, turkey heart, turkey kidneys, natural chicken flavor, chicken cartilage, turkey cartilage, dried seaweed, whole pumpkin, whole yellow zucchini, kale , spinach, mustard greens, collard greens, turnip greens, carrots, apples, pears, freeze-dried chicken liver, freeze-dried turkey liver, pumpkin seeds, sunflower seeds, choline chloride, zinc proteinate, copper proteinate, tocopherol mixed (preservative), chicory root, turmeric, sarsaparilla root, althea root, rosehip, juniper berries, fermentation product of dried lactobacillus acidophilus, fermentation product of dried bifidobacterium animalis, fermentation product of lactobacillus dried casei."},{"title":"Guaranteed Analysis","content":"Crude protein (min.) 35% \n Fat content (min.) 20% \n Humidity (max.) 10% \n Crude fibers (max.) 4% \n Calcium (min.) 1% \n Phosphorus (min.) 0.8 % \n Omega 6 fatty acids* (min.) 3.5% \n Omega 3 fatty acids* (min.) 0.7% \n DHA* (min.) 0.15% \n EPA* (min.) 0.1%"}],
+      "images": [
+          "https://cdn11.bigcommerce.com/s-d331r3r4ex/images/stencil/608x608/products/21529/43701/4661__84152.1694612993.jpg?c=1",
+          "https://cdn11.bigcommerce.com/s-d331r3r4ex/images/stencil/608x608/products/21529/43702/acana-gato-meadowland_ygGFh__49408.1694612993.jpg?c=1"
+      ],
+      "lifeStage": "ADULT",
+      "brandId": 25,
+      "slug": "acana-gato-meadowland",
+      "options": [
+          {
+              "name": "1.8 kg",
+              "price": 25490,
+              "stock": 1,
+              "discount": 0
+          },
+          {
+              "name": "4.5 kg",
+              "price": 52490,
+              "stock": 1,
+              "discount": 0
+          }
+      ]
+  },
+  {
+      "categoryId": 10,
+      "petType": [
+          "SMALL_ANIMAL"
+      ],
+      "name": "Hedgehog Diet Mazuri ",
+      "miniDesc": "The Hedgehog mazuri is a food designed specifically for hedgehogs that completely complies with the necessary diet for the little ones. In addition to that, it is an extruded food that helps preserve a good flavor, designed to be complete and balanced.",
+      "description": [{"title":"FEATURES AND BENEFITS","content":"Designed to be complete and balanced for land hedgehogs – No supplementation required. \n Highly fortified – Can be added with fruits, vegetables, etc. \n Contains fish oil - Rich source of long-chain omega-3 fatty acids. \n Contains lecithin – Rich source of phospholipids. \n Contains high fiber – Helps simulate the chitin component of the insectivore diet. \n Contains natural pigments – For healthy feather pigmentation. \n Contains taurine – At levels that meet recommendations for carnivores. \n Contains natural vitamin E and stabilized vitamin C. \n Very tasty."},{"title":"Ingredients","content":"Ground soybean meal, whole wheat, dried beet pulp, ground brown rice, dehulled soybean meal, dried egg product, tempered poplar, preserved pork fat with BHA and critical acid, preserved poultry fat with BHA, flavor natural poultry, dried apple grapefruit, powdered cellulose, wheat germ, fish meal (menhaden), dried whey, shrimp meal, soybean oil, lecithin, dried brewer's yeast, fish oil (menhaden) , phosphoric acid, dl-methionine, taurine, tagetes (brown color), choline chloride, salt, mixed tocopherols (preservative, form of vitamin E, citric acid, rosemary extract), l-ascorbyl-2-polyphosphate (vitamin C stabilized), inositol, d-alpha-tocopheryl acetate (source of Vitamin E), niacin, manganous oxide, zinc oxide, thiamine mononitrate, calcium carbonate, menadione sodium bisulfite (source of vitamin K), ferrous carbonate, sulfate ferrous, calcium iodate, calcium pantothenate, copper sulfate, riboflavin, pyridoxine hydrochloride, canthaxanthin (color), zinc sulfate, vitamin A acetate, folic acid, sodium selenite, cobalt, carbonate, biotin, vitamin B12 supplement , cholecalciferol (vitamin D3)."},{"title":"Guaranteed Analysis","content":"Protein 28.0% \n Fat 12.0% \n Fiber 13.0% \n Humidity no greater than 12.0% \n Ash not greater than 8.0%"},{"title":"Recommended Quantity","content":"This nutritional information displayed is referential since it varies according to each animal due to its weight and age. \n \n It is recommended to corroborate information with your veterinarian. \n Estimated consumption (grams/day in adult animal) 15-30 \n Estimated consumption (tablespoon / day) 1.5-2 \n Extruded Product Form \n Bag Weight (Kg.) 0.50 and 1.5 \n Along with their food, it is recommended to keep fresh, clean water available at all times."}],
+      "images": [
+          "https://www.mazuri.cl/wp-content/uploads/2018/06/hedgehog-sitio.jpg"
+      ],
+      "lifeStage": "ALL_LIFE_STAGES",
+      "brandId": 17,
+      "slug": "hedgehog-diet-mazuri",
+      "options": [
+          {
+              "name": "500 g",
+              "price": 5490,
+              "stock": 4,
+              "discount": 0
+          },
+          {
+              "name": "1.5 kg",
+              "price": 13990,
+              "stock": 2,
+              "discount": 0
+          }
+      ]
+  },
+  {
+      "categoryId": 12,
+      "petType": [
+          "SMALL_ANIMAL"
+      ],
+      "name": "Ferret Diet Mazuri",
+      "miniDesc": "Mazuri Ferret is a diet that provides a large amount of energy to your ferret. \n Concentrated, nutritious and tasty food, which provides the necessary nutrients for feeding all life stages of ferrets. \n The New Mazuri Ferret formula uses three sources of animal protein, contains less than 15% starch, added with probiotics, natural fiber, omega-3 fatty acids and urine acidifiers to prevent urolith formation.",
+      "description": [{"title":"FEATURES AND BENEFITS","content":"Proteins from various sources (poultry, pork, bovine) appropriate for carnivores. \n Extremely appetizing and extruded diet – Easy to digest. \n High density – Low stool volume. \n Moderate starch level – Less than 15% starch, more appropriate for carnivores. \n Contains fish oil – source of Omega-3 fatty acids. \n Natural Antioxidants – Mixed Tocopherols and Rosemary Extract. \n Contains probiotics – To support digestive tract health. \n Contains natural urine acidifiers. \n Dehydrated Yucca Shidigera Extract – Shown to reduce ammonia aerosol in animal facilities."},{"title":"Ingredients","content":"Poultry by-product meal, ground brown rice, dehulled soybean meal, BHA-preserved pork animal fat, pork blood meal, BHA-preserved poultry fat, glutamic acid, dried beet pulp, protein concentrate soybean, soybean oil, dehydrated brewer's yeast, phosphoric acid, calcium carbonate, dicalcium phosphate, fish meal, fish oil, salt, calcium, propionate (as a preservative), taurine, dl-methionine, choline chloride, pyridoxine hydrochloride, Lactobacillus acidophilus fermentation and dehydration product, preserved with mixed tocopherols (form of vitamin E), Lactobacillus casei fermentation dehydrated product, rosemary extract, thiamine mononitrate, dehydrated Bifidobacterium thermophilum fermentation product, vitamin A supplement, vitamin D3 supplement, Enterococcus faecium dried fermentation product, dried yucca shidigera extract, d-alpha tocopheryl acetate (form of vitamin E), biotin, citric acid, menadione sodium bisulfite complex (source of vitamin K), folic acid, oxide zinc, vitamin B12 supplement, calcium pantothenate, riboflavin, nicotinic acid, ferrous sulfate, calcium iodate, basic copper chloride, l-lysine, manganous oxide, ferrous carbonate, copper sulfate, zinc sulfate, sodium selenite, cobalt carbonate."},{"title":"Guaranteed Analysis","content":"Protein 38.0% \n Fat 20.5% \n Fiber 4.0% \n Humidity no greater than 12.0% \n Ash no greater than 7.5% \n Vitamin E 225 IU/kg \n Omega-3 fatty acids 0.50% \n Taurine 0.25%"},{"title":"CONSUMPTION PER DAY AND PRODUCT CHARACTERISTICS","content":"Información nutricional expuesta es referencial y varía según cada animal por peso y edad, se recomienda corroborar información con su médico veterinario. \n Duración Bolsa Adulto (meses) 1-1,5 \n Consumo estimado (gramos/día en animal adulto) 50-70 \n Consumo estimado (Cuchara sopera / día ) 3,5-5 \n Forma Producto Extruido \n Peso Bolsa (Kg.) 2.2"}],
+      "images": [
+          "https://www.mazuri.cl/wp-content/uploads/2017/08/ferretdietmazuri-317x400.png"
+      ],
+      "lifeStage": "ALL_LIFE_STAGES",
+      "brandId": 17,
+      "slug": "ferret-diet-mazuri",
+      "options": [
+          {
+              "name": "2 kg",
+              "price": 21490,
+              "stock": 4,
+              "discount": 0
+          },
+          {
+              "name": "11 kg",
+              "price": 89990,
+              "stock": 1,
+              "discount": 0
+          }
+      ]
+  },
+  {
+      "categoryId": 11,
+      "petType": [
+          "SMALL_ANIMAL"
+      ],
+      "name": "Timothy-Based Guinea Pig Diet",
+      "miniDesc": "Mazuri Guinea Pig is a complete and balanced food, pelletized based on Timothy grass, which provides a better mineral balance than diets based on alfalfa. Does not require vitamin supplementation. It is supplemented with stabilized vitamin C.",
+      "description": [{"title":"FEATURES AND BENEFITS","content":"Nutritionally complete – No supplements needed, including vitamin C. Timothy hay-based tablet – Low protein and better mineral balance than alfalfa. \n Greater fiber – Promotes more chewing activity. \n Contains stabilized vitamin C – Remains active longer than vitamin C. \n Contains probiotics – May promote gastrointestinal tract health. \nContains flaxseed – source of Omega-3 fatty acids. \n Contains vitamin of natural origin \n Contains Yucca shidigera – A natural flavoring"},{"title":"Ingredients","content":"timothy hay, ground soybean hulls, wheat gizzards, hulled soybean meal, ground oats, flax seed, cane molasses, whole wheat, calcium carbonate, soybean oil, salt, dicalcium phosphate, dehydrated whey, lascoryl-2-polyphosphate (stabilized vitamin C), magnesium oxide, choline chloride, dl-methionine, fermentation product of dehydrated Lactobacillus acidophilus, fermentation product of dehydrated Lactobacillus casei, fermentation product of dehydrated Bifidobacterium thermophilum, supplement vitamin A, yucca shidigera extract, dehydrated Enterococcus faecium fermentation product, menadione sodium bisulfite complex (source of vitamin K), vitamin D3 supplement, folic acid, pyridoxine hydrochloride, rice hull, calcium pantothenate, calcium acetate d-alpha tocopherol, riboflavin, vegetable oil, thiamine mononitrate, vitamin B12 supplement, nicotinic acid, cobalt carbonate, manganese oxide, zinc oxide, ferrous carbonate, copper sulfate, zinc sulfate, calcium iodate, selenite of sodium."},{"title":"Guaranteed Analysis","content":"Protein 18.0% \n Fat 4.0% \n Fiber 18.0% \n Humidity no greater than 12.0% \n Ash not greater than 9.0%"},{"title":"CONSUMPTION PER DAY AND PRODUCT CHARACTERISTICS","content":"Nutritional information presented is referential and varies according to each animal by weight and age, it is recommended to corroborate information with your veterinarian. \n Adult Bag Duration (months) 1 \n Estimated consumption (grams/day in adult animal) 40-50 \n Estimated consumption (tablespoon / day) 2.5-3 \n Pellet Product Form \n Bag Weight (Kg.) 1.00 \n Along with their food, it is recommended to keep fresh, clean water available at all times."}],
+      "images": [
+          "https://www.mazuri.cl/wp-content/uploads/2017/08/timothyguineapig-317x400.png"
+      ],
+      "lifeStage": "ALL_LIFE_STAGES",
+      "brandId": 17,
+      "slug": "timothy-based-guinea-pig-diet",
+      "options": [
+          {
+              "name": "1 kg",
+              "price": 8490,
+              "stock": 2,
+              "discount": 0
+          },
+          {
+              "name": "11.36 kg",
+              "price": 69990,
+              "stock": 3,
+              "discount": 0
+          }
+      ]
+  },
+  {
+      "categoryId": 7,
+      "petType": [
+          "DOG"
+      ],
+      "name": "Rainbow Olfactory Ball",
+      "miniDesc": "Multifunctional toy with a unique design. It can be filled with food, drips food during pets' play, and can help pets reduce anxiety.",
+      "description": [{"title":"General description","content":"Multifunctional toy with a unique design. It can be filled with food, drips food during pets' play, and can help pets reduce anxiety. \n With the multifunctional design, this snuff ball not only promotes the dog's digestion, but also trains the dog's sniffing ability. \n Made of high quality felt cloth material, this pet toy is soft and bite resistant. \n Material: felt cloth \n Features: wear-resistant, foldable, creative"}],
+      "images": [
+          "https://cdn11.bigcommerce.com/s-d331r3r4ex/images/stencil/608x608/products/22258/45143/5961__55508.1693927995.jpg?c=1",
+          "https://cdn11.bigcommerce.com/s-d331r3r4ex/images/stencil/608x608/products/22258/45144/pelota-olfativa-arcoiris-para-perros-y-gatos_Ih6a6__76073.1691700985.jpg?c=1"
+      ],
+      "lifeStage": "ALL_LIFE_STAGES",
+      "brandId": 22,
+      "slug": "rainbow-olfactory-ball",
+      "options": [
+          {
+              "name": "Unit",
+              "price": 9990,
+              "stock": 10,
+              "discount": 0
+          }
+      ]
+  },
+  {
+      "categoryId": 7,
+      "petType": [
+          "DOG"
+      ],
+      "name": "Jute Toy for Dog Training",
+      "miniDesc": "A jute dog training toy is an essential tool used in dog training, especially in activities such as obedience, agility, and strength and endurance training.",
+      "description": [{"title":"General description","content":"A jute dog training toy is an essential tool used in dog training, especially in activities such as obedience, agility, and strength and endurance training. This type of toy is specifically designed to resist wear and tear caused by dogs' harsh bites and claws, and is usually made from durable materials such as jute, which is a strong natural fiber."},{"title":"Key Features","content":"Sturdy Material: Jute is a sturdy material that can withstand the constant pulling and biting of a dog without breaking easily. \n Specific shape and design: These toys usually have elongated or cylindrical shapes that allow the dog to grip them comfortably with their mouth. Some have handles or ropes so the trainer can hold and move them effectively. \n Ease of Cleaning: Cleanliness is important as training toys can get dirty quickly. Most jute toys are easy to clean and keep hygienic. \n Versatility: Jute toys come in different sizes and shapes to fit each dog's specific training needs. They can be used for retrieval exercises, tug of war, controlled bite exercises and more. \n Resistance to Sharp Teeth: These toys are designed to resist bites from dogs with sharp teeth, helping to prevent the animal from damaging the toy while providing a suitable surface for chewing and exercise. \n Safety: Jute toys are designed with the dog's safety in mind. They should not have small parts that the dog could accidentally swallow or sharp edges that could hurt the animal."},{"title":"Measures","content":"30 x 7 x 5 cm"}],
+      "images": [
+          "https://cdn11.bigcommerce.com/s-d331r3r4ex/images/stencil/608x608/products/22480/45789/yute1__69726.1698244157.png?c=1",
+          "https://cdn11.bigcommerce.com/s-d331r3r4ex/images/stencil/608x608/products/22480/45787/61qqBrASYPS._AC_SL1001___78900.1698243417.jpg?c=1",
+          "https://cdn11.bigcommerce.com/s-d331r3r4ex/images/stencil/608x608/products/22480/45788/yute2__32269.1698243417.png?c=1"
+      ],
+      "lifeStage": "ALL_LIFE_STAGES",
+      "brandId": 22,
+      "slug": "jute-toy-for-dog-training",
+      "options": [
+          {
+              "name": "Unit",
+              "price": 5790,
+              "stock": 1,
+              "discount": 0
+          }
+      ]
+  },
+  {
+      "categoryId": 7,
+      "petType": [
+          "DOG"
+      ],
+      "name": "Rubber ball for sniffing and searching for food",
+      "miniDesc": "Toy designed for dogs that enjoy activities that stimulate their sense of smell and their search instinct. It is made of durable rubber and has a texture that makes it easy to grip with the dog's teeth.",
+      "description": [{"title":"General description","content":"Toy designed for dogs that enjoy activities that stimulate their sense of smell and their search instinct. It is made of durable rubber and has a texture that makes it easy to grip with the dog's teeth. \n The ball contains an opening in which food or treats can be placed for the dog to find by sniffing and manipulating the ball. This foraging activity is great for keeping dogs entertained and exercising their mind and body. \n The rubber sniffing and foraging ball is a useful tool for training dogs and improving their ability to concentrate and pay attention. Additionally, it can also help reduce stress and anxiety in dogs by providing them with an activity that allows them to release their energy and stimulate their mind."},{"title":"Measures","content":"20 x 20 x 20 cm"}],
+      "images": [
+          "https://cdn11.bigcommerce.com/s-d331r3r4ex/images/stencil/608x608/products/22302/45237/6008__21893.1693924205.jpg?c=1",
+          "https://cdn11.bigcommerce.com/s-d331r3r4ex/images/stencil/608x608/products/22302/45238/pelota-de-goma-para-olfatear-y-buscar-comida_XHTeF__58648.1691701089.jpg?c=1",
+          "https://cdn11.bigcommerce.com/s-d331r3r4ex/images/stencil/608x608/products/22302/45239/pelota-de-goma-para-olfatear-y-buscar-comida_hUTuM__52608.1693924205.jpg?c=1"
+      ],
+      "lifeStage": "ALL_LIFE_STAGES",
+      "brandId": 22,
+      "slug": "rubber-ball-for-sniffing-and-searching-for-food",
+      "options": [
+          {
+              "name": "Unit",
+              "price": 12490,
+              "stock": 0,
+              "discount": 0
+          }
+      ]
+  },
+  {
+      "categoryId": 7,
+      "petType": [
+          "DOG"
+      ],
+      "name": "Elastic Animal Toy",
+      "miniDesc": "Sturdy elastic pet toys, durable quality animated animal design, also good for pet's dental health, clean teeth and massage gums.",
+      "description": [{"title":"General description","content":"A great gift option for friends who have dogs. \n Best dog toy gift set for puppies and small dogs. \n Cartoon animal pattern, ensures its popularity. \n Made of premium material for durable and practical use. \n Good for dental health, clean teeth and massage gums while playing and prevent dog from biting other things."},{"title":"Measures","content":"Cow 32*11cm \n Orangutan 32.5*11.5cm \n Donkey 30.5*10cm"}],
+      "images": [
+          "https://cdn11.bigcommerce.com/s-d331r3r4ex/images/stencil/608x608/products/21029/42732/6139__30346.1691698134.jpg?c=1",
+          "https://cdn11.bigcommerce.com/s-d331r3r4ex/images/stencil/608x608/products/21029/42734/juguete-elastico-de-animales-para-perros-y-gatos_kNEwE__54858.1691698134.jpg?c=1"
+      ],
+      "lifeStage": "ALL_LIFE_STAGES",
+      "brandId": 22,
+      "slug": "elastic-animal-toy",
+      "options": [
+          {
+              "name": "Cow",
+              "price": 3990,
+              "stock": 3,
+              "discount": 0
+          },
+          {
+              "name": "Orangutan",
+              "price": 3990,
+              "stock": 0,
+              "discount": 0
+          },
+          {
+              "name": "Donkey",
+              "price": 3990,
+              "stock": 0,
+              "discount": 0
+          }
+      ]
+  },
+  {
+      "categoryId": 8,
+      "petType": [
+          "CAT"
+      ],
+      "name": "Fish Toy with Catnip",
+      "miniDesc": "Toy for cats in the shape of a Fish with Catnip: Fun and Feline Stimulation!",
+      "description": [{"title":"General description","content":"Toy for cats in the shape of a Fish with Catnip: Fun and Feline Stimulation! To choose from in 2 colors. \n This little fish for cats is a toy that will keep them totally entertained for hours. It has Catnip inside, which will arouse your cat's interest even more."}],
+      "images": [
+          "https://cdn11.bigcommerce.com/s-d331r3r4ex/images/stencil/608x608/attribute_rule_images/37460_source_1706541125.jpg"
+      ],
+      "lifeStage": "ALL_LIFE_STAGES",
+      "brandId": 22,
+      "slug": "fish-toy-with-catnip",
+      "options": [
+          {
+              "name": "Grey",
+              "price": 1490,
+              "stock": 1,
+              "discount": 0
+          },
+          {
+              "name": "Beige",
+              "price": 1490,
+              "stock": 2,
+              "discount": 0
+          }
+      ]
+  },
+  {
+      "categoryId": 8,
+      "petType": [
+          "CAT"
+      ],
+      "name": "Mouse toy in cage for cats",
+      "miniDesc": "A cage mouse toy for cats is an ingenious and entertaining accessory designed to stimulate the hunting and playing instincts of domestic felines. This toy consists of two main parts: a small plush mouse and a cage.",
+      "description": [{"title":"General description","content":"A cage mouse toy for cats is an ingenious and entertaining accessory designed to stimulate the hunting and playing instincts of domestic felines. This toy consists of two main parts: a small plush mouse and a cage. \n Plush Mouse: The mouse itself is usually made of soft, skin-friendly materials, such as plush or cloth, to make it safe for the cat to bite and catch. It is usually designed to look like a real mouse, with natural colors and details like ears and tail. Some models even have built-in rattles or squeakers to increase the cat's interest. \nCage: The cage is a wire or plastic structure that surrounds the stuffed mouse. The cage has openings large enough to allow the cat to reach the mouse, but small enough that the toy is not too easy to catch. This challenges the cat and encourages active play as it attempts to \"chase\" the mouse across the cage bars. \n The mouse in cage toy for cats is a great way to keep felines entertained and active. It stimulates their hunting skills, gives them exercise and prevents boredom. Additionally, it provides a safe and controlled way for cats to explore their natural instincts without harming other small animals."}],
+      "images": [
+          "https://cdn11.bigcommerce.com/s-d331r3r4ex/images/stencil/608x608/products/22444/45657/ct017__94871.1696966923.png?c=1"
+      ],
+      "lifeStage": "ALL_LIFE_STAGES",
+      "brandId": 22,
+      "slug": "mouse-toy-in-cage-for-cats",
+      "options": [
+          {
+              "name": "Unit",
+              "price": 1490,
+              "stock": 1,
+              "discount": 0
+          }
+      ]
+  },
+  {
+      "categoryId": 17,
+      "petType": [
+          "FISH"
+      ],
+      "name": "Sunsun 72 Liter Aquarium",
+      "miniDesc": "SUNSUN HE-600 72L New Aquarium Fish Tank Complete Set",
+      "description": [{"title":"General description","content":"Si eres un amante de los acuarios y buscas algo diferente, este modelo te sorprenderá gracias a su iluminación LED. No solo te ofrecerá una mayor eficiencia energética que reducirá de un modo importante el consumo, sino que además dará a la estancia donde lo coloques un toque diferente. \n El acuario para peces ofrece algo muy distinto dentro de las propuestas actuales de iluminación. Más allá de una alternativa con un diseño muy contemporáneo, de líneas limpias y sencillas. \n Esta lineal incluye cristal de excelente transparencia y calidad junto con un sistema de filtración que incluye el oxigenado constante del agua. sistema de iluminación led de distintos colores. Sistema filtrado \n SUNSUN HE-600 72L Nuevo juego completo de tanque de peces de acuario"},{"title":"Characteristics","content":"- Brand: SUNSUN \n - Top quality aquarium and beautiful views \n - Made of super transparent glass, glass thickness 5mm. \n - Tank capacity: 72L \n - Aquarium Size: 57.5cm (L) x 33.5cm (W) x 48cm (H) \n - Full filtration system on top \n - 15W LED light \n - 2 x LED light modes: single cyan and color changing with red, blue, green, etc. \n - Water pump 8W, 500L/H \n - Touch screen LED display, change LED light mode with one touch \n - Comes with temporal sensor, which displays temporal on LED screen \n - Easy maintenance"}],
+      "images": [
+          "https://cdn11.bigcommerce.com/s-d331r3r4ex/images/stencil/608x608/products/20740/42181/3736__48923.1694447956.jpg?c=1",
+          "https://cdn11.bigcommerce.com/s-d331r3r4ex/images/stencil/608x608/products/20740/42182/acuario-sunsun-72-litros-alta-gama___38466.1691697427.jpg?c=1",
+          "https://cdn11.bigcommerce.com/s-d331r3r4ex/images/stencil/608x608/products/20740/42183/__817__48938.1694447956.jpg?c=1"
+      ],
+      "lifeStage": "ALL_LIFE_STAGES",
+      "brandId": 20,
+      "slug": "sunsun-72-liter-aquarium",
+      "options": [
+          {
+              "name": "Black",
+              "price": 149900,
+              "stock": 2,
+              "discount": 5
+          },
+          {
+              "name": "White",
+              "price": 149900,
+              "stock": 0,
+              "discount": 5
+          }
+      ]
+  },
+  {
+      "categoryId": 17,
+      "petType": [
+          "FISH"
+      ],
+      "name": "Sunsun 15 Liter Aquarium",
+      "miniDesc": "Sunsun brings us its premium line of curved glass aquariums with superior filtering system and 3.5 watt LED light.",
+      "description": [{"title":"General description","content":"If you are an aquarium lover and are looking for something different, this model will surprise you thanks to its LED lighting. Not only will it offer you greater energy efficiency that will significantly reduce consumption, but it will also give the room where you place it a different touch. \n The fish aquarium offers something very different from current lighting proposals. Beyond an alternative with a very contemporary design, with clean and simple lines. \n This line includes glass of excellent transparency and quality along with a filtration system that includes constant oxygenation of the water. LED lighting system of different colors. \n Superior filtering system and 3.5 w LED light"},{"title":"Measures","content":"30 x 21,5 x 38 cm"}],
+      "images": [
+          "https://cdn11.bigcommerce.com/s-d331r3r4ex/images/stencil/608x608/products/20745/42193/3019__58971.1691697438.jpg?c=1"
+      ],
+      "lifeStage": "ALL_LIFE_STAGES",
+      "brandId": 20,
+      "slug": "sunsun-15-liter-aquarium",
+      "options": [
+          {
+              "name": "Pink",
+              "price": 64990,
+              "stock": 0,
+              "discount": 0
+          },
+          {
+              "name": "White",
+              "price": 64990,
+              "stock": 0,
+              "discount": 0
+          },
+          {
+              "name": "Black",
+              "price": 64990,
+              "stock": 1,
+              "discount": 0
+          },
+          {
+              "name": "Blue",
+              "price": 64990,
+              "stock": 4,
+              "discount": 0
+          }
+      ]
+  },
+  {
+      "categoryId": 18,
+      "petType": [
+          "SMALL_ANIMAL"
+      ],
+      "name": "2-story Hamster cage",
+      "miniDesc": "The large-capacity hamster cage has enough space to move freely. A very convenient material to disinfect. It is very easy to clean.",
+      "description": [{"title":"General description","content":"The large-capacity hamster cage has enough space to move freely. A very convenient material to disinfect. It is very easy to clean. \n Ideal to offer a habitat with all the accessories available so that you can stay active and very happy. It has unmatched comfort that includes a nest to sleep comfortably or take refuge, a wheel where you can exercise and a water fountain. It is made with high quality materials to provide greater durability."},{"title":"ADVANTAGES","content":"Includes exercise wheel, nest for sleeping or hiding and a water fountain \n Provides a lot of comfort. \n Easy to transport and assemble. \n Made with high quality resistant materials. \n Large capacity cage, have enough space to move freely. \n A very convenient material to disinfect. It is very easy to clean. \n Hamster cage made of metal and plastic with a square shape \n Hamster cage. Contains wheel drinker and special house. This cage is manufactured with high quality. \n 2 stairs"},{"title":"Measures","content":"47 x 32 x 40.5 cm"}],
+      "images": [
+          "https://cdn11.bigcommerce.com/s-d331r3r4ex/images/stencil/608x608/products/22488/45808/h4702__14151.1698260598.png?c=1"
+      ],
+      "lifeStage": "ALL_LIFE_STAGES",
+      "brandId": 22,
+      "slug": "2-story-hamster-cage",
+      "options": [
+          {
+              "name": "Unit",
+              "price": 24990,
+              "stock": 3,
+              "discount": 0
+          }
+      ]
+  },
+  {
+      "categoryId": 18,
+      "petType": [
+          "SMALL_ANIMAL"
+      ],
+      "name": "Barn cage for rabbits 3 floors",
+      "miniDesc": "rabbit cage with three-story structure, designed for optimal living comfort and connected by comfortable wooden stairs",
+      "description": [{"title":"General description","content":"Barn is a spacious bunny cage that has a large useful surface thanks to its three floors. The cage, designed from the smaller version of the Barn model, maintains the original shape reminiscent of an American barn with a raised roof and provides more space for your pet thanks to its three levels. It has two large floors connected by comfortable stairs and an attic with a high ceiling, which can be opened to comfortably access the cage and carry out daily maintenance operations. The cage is equipped with essential accessories, such as mangers, feeders, waterers and a house for moments of relaxation. \n The Barn rabbit cage can be completely disassembled, so it takes up little space, and has been made with robust painted wire structures and thermoplastic resin trays that effectively contain dirt, bedding and food waste. On the front there are comfortable sliding doors, specially designed to guarantee the safety of the animal. For thorough cleaning, the buckets can be separated from the wire frames."},{"title":"Characteristics","content":"Three-story rabbit cage \n Ample living space \n American barn theme model \n Patented design \n Trays made of robust thermoplastic resin to contain dirt, litter or sawdust \n Wire structure treated with anti-corrosion powder paint \n Easy access to internal areas thanks to doors and walls that can be opened \n Fully opening roof to access the interior \n Plastic top frame with closing hooks \n Sliding entrance doors \n Wire frame and easy-to-separate buckets for cleaning \n Accessories included: 2 drinkers, 2 feeders and 2 ladders \n With dimensions of 118 x 58 x h 166 cm. Comes in space-saving, easy-to-assemble packaging"}],
+      "images": [
+          "https://cdn11.bigcommerce.com/s-d331r3r4ex/images/stencil/608x608/products/21852/46267/1-0180017477_1800x1800__27991.1703623127.jpg?c=1",
+          "https://cdn11.bigcommerce.com/s-d331r3r4ex/images/stencil/608x608/products/21852/46268/10-0190015106_1800x1800__65449.1703623127.jpg?c=1",
+          "https://cdn11.bigcommerce.com/s-d331r3r4ex/images/stencil/608x608/products/21852/46269/6-0190015102_1800x1800__76895.1703623127.jpg?c=1",
+          "https://cdn11.bigcommerce.com/s-d331r3r4ex/images/stencil/608x608/products/21852/46270/3-0190015099_1800x1800__26964.1703623127.jpg?c=1"
+      ],
+      "lifeStage": "ALL_LIFE_STAGES",
+      "brandId": 22,
+      "slug": "barn-cage-for-rabbits-3-floors",
+      "options": [
+          {
+              "name": "Unit",
+              "price": 240990,
+              "stock": 1,
+              "discount": 0
+          }
+      ]
+  }
+]
+
+[
+  {
+      "name": "Dog Food",
+      "slug": "dog-food",
+      "description": "Explore our comprehensive range of dog food, crafted to meet the nutritional needs of your canine companions. From puppies to seniors, we offer a variety of flavors and formulas to suit every breed and dietary requirement.",
+      "image": "no image"
+  },
+  {
+      "name": "Cat Food",
+      "slug": "cat-food",
+      "description": "Our selection of cat food includes high-quality, flavorful options for felines of all ages. Whether your cat prefers dry kibble or wet food, we have options to keep them healthy and happy.",
+      "image": "no image"
+  },
+  {
+      "name": "Dog Toys",
+      "slug": "dog-toys",
+      "description": "Discover a playful variety of dog toys designed for fun and enrichment. Our collection includes durable chew toys, interactive puzzles, and fetch toys to keep your dog entertained and active.",
+      "image": "no image"
+  },
+  {
+      "name": "Cat Toys",
+      "slug": "cat-toys",
+      "description": "Engage your cat's playful instincts with our range of cat toys. From tantalizing feather wands to stimulating laser pointers, we have everything to keep your feline friend amused and agile.",
+      "image": "no image"
+  },
+  {
+      "name": "Fish Food",
+      "slug": "fish-food",
+      "description": "Nourish your aquatic pets with our high-quality fish food. Our range includes flakes, pellets, and specialized formulas for different types of fish, ensuring their health and vitality.",
+      "image": "no image"
+  },
+  {
+      "name": "Hedgehog Food",
+      "slug": "hedgehog-food",
+      "description": "Specially formulated for your spiky friends, our hedgehog food is designed to provide balanced nutrition, supporting their unique dietary needs for a healthy life.",
+      "image": "no image"
+  },
+  {
+      "name": "Guinea Pig Food",
+      "slug": "guinea-pig-food",
+      "description": "Our guinea pig food selection offers a blend of essential nutrients to maintain your guinea pig's health. Choose from a variety of pellets and hay to meet their dietary needs.",
+      "image": "no image"
+  },
+  {
+      "name": "Ferret Food",
+      "slug": "ferret-food",
+      "description": "Discover our premium ferret food, rich in protein and designed to meet the dietary requirements of ferrets. Our selection helps ensure your ferret stays active, healthy, and satisfied.",
+      "image": "no image"
+  },
+  {
+      "name": "Hamster Food",
+      "slug": "hamster-food",
+      "description": "Our hamster food range is formulated to provide a balanced diet for your furry friends. With a mix of seeds, grains, and pellets, we cater to the nutritional needs of hamsters.",
+      "image": "no image"
+  },
+  {
+      "name": "Chinchilla Food",
+      "slug": "chinchilla-food",
+      "description": "Find the right nourishment for your chinchilla with our specialized food options. Our selection offers the perfect blend of hay, pellets, and treats for your chinchilla's health and well-being.",
+      "image": "no image"
+  },
+  {
+      "name": "Rabbit Food",
+      "slug": "rabbit-food",
+      "description": "Our rabbit food selection is tailored to meet the dietary needs of rabbits. From fiber-rich hay to nutrient-packed pellets, we provide everything to keep your rabbit healthy and happy.",
+      "image": "no image"
+  },
+  {
+      "name": "Reptile Food",
+      "slug": "reptile-food",
+      "description": "Cater to the unique dietary requirements of your reptiles with our range of reptile food. Whether you have a turtle, lizard, or snake, we have the appropriate food for their specific needs.",
+      "image": "no image"
+  },
+  {
+      "name": "Fish Aquariums",
+      "slug": "fish-aquariums",
+      "description": "Find the perfect aquatic home for your fish with our selection of aquariums. Available in various sizes and styles, our aquariums are ideal for enhancing the beauty of your aquatic pets.",
+      "image": "",
+  },
+  {
+      "name": "Small Pet Cage & Pen",
+      "slug": "small-pet-cage-&-pen",
+      "description": "Our Small Pet Cage & Pen is a versatile and comfortable habitat, designed to accommodate a variety of small pets including hamsters, guinea pigs, chinchillas, ferrets, and rabbits. This multi-functional enclosure offers ample space for play, rest, and exercise, ensuring the well-being and safety of your small companions. It features easy-to-clean materials and a thoughtful design for easy access and maintenance, making it an ideal choice for pet owners seeking a durable and convenient solution for their beloved small pets.",
+      "image": "no image"
+  }
+]
+
+[
+  {
+      "name": "Nomoypet",
+      "image": "/images/brands/monoypet.jpg",
+      "slug": "nomoypet"
+  },
+  {
+      "name": "Asan",
+      "image": "/images/brands/asan.png",
+      "slug": "asan"
+  },
+  {
+      "name": "Mazuri",
+      "image": "/images/brands/mazuri.png",
+      "slug": "mazuri"
+  },
+  {
+      "name": "CéDé",
+      "image": "/images/brands/cede.webp",
+      "slug": "cede"
+  },
+  {
+      "name": "Vitapol",
+      "image": "/images/brands/vitapol.png",
+      "slug": "vitapol"
+  },
+  {
+      "name": "Sunsun",
+      "image": "/images/brands/sunsun.png",
+      "slug": "sunsun"
+  },
+  {
+      "name": "All for Paws",
+      "image": "/images/brands/afp.png",
+      "slug": "all-for-paws"
+  },
+  {
+      "name": "Marben Pets",
+      "image": "/images/brands/marben-pets.png",
+      "slug": "marben-pets"
+  },
+  {
+      "name": "Biofresh",
+      "image": "/images/brands/biofresh.png",
+      "slug": "biofresh"
+  },
+  {
+      "name": "Alaska",
+      "image": "/images/brands/alaska.png",
+      "slug": "alaska"
+  },
+  {
+      "name": "Acana",
+      "image": "/images/brands/acana.png",
+      "slug": "acana"
+  },
+  {
+      "name": "Diamond Naturals",
+      "image": "/images/brands/diamond-naturals.png",
+      "slug": "diamond-naturals"
+  },
+  {
+      "name": "Bravery",
+      "image": "/images/brands/bravery.png",
+      "slug": "bravery"
+  },
+  {
+      "name": "Agility",
+      "image": "/images/brands/agility.png",
+      "slug": "agility"
+  }
+]
+
