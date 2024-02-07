@@ -22,6 +22,7 @@ export const addProductToCartValidation = [
 export const removeProductFromCartValidation = [
   body('authId').isString().withMessage('User id must be a number'),
   body('productId').isNumeric().withMessage('Product id must be a number'),
+  body('optionSelectedIndex').isNumeric().withMessage('Option selected index must be a number'),
   validate
 ]
 

@@ -21,10 +21,10 @@ export class UserRoutes {
     router.post('/user', createUserValidation, controller.createUser)
 
     router.get('/user', getAllModelValidation, controller.getAllUsers)
-    router.get('/user/:id', idValidation, controller.getUserById)
+    router.get('/user/:authId', controller.getUserById)
     router.get('/user/by-email/:email', emailValidation, controller.getUserByEmail)
 
-    router.put('/user/:id', updateUserValidation, controller.updateUser)
+    router.put('/user/:authId', updateUserValidation, controller.updateUser)
     router.patch('/user/activate/:id', idValidation, controller.activateUser)
 
     router.delete('/user/:id', idValidation, controller.deleteUser)

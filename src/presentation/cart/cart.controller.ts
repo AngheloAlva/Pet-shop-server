@@ -44,14 +44,14 @@ export class CartController {
     try {
       const { optionSelectedIndex, productId, quantity, authId } = req.body
 
-      await this.cartService.addProductToCart({
+      const productCartResponse = await this.cartService.addProductToCart({
         authId,
         quantity,
         productId,
         optionSelectedIndex
       })
 
-      return res.status(201).json({ message: 'Product added to cart' })
+      return res.status(201).json(productCartResponse)
     } catch (error) {
       return this.handleError(error, res)
     }
@@ -59,11 +59,12 @@ export class CartController {
 
   removeProductFromCart = async (req: Request, res: Response): Promise<Response> => {
     try {
-      const { productId, authId } = req.body
+      const { productId, authId, optionSelectedIndex } = req.body
 
       await this.cartService.removeProductFromCart(
         authId as string,
-        productId as number
+        Number(productId),
+        Number(optionSelectedIndex)
       )
 
       return res.status(200).json({ message: 'Product removed from cart' })
@@ -74,12 +75,13 @@ export class CartController {
 
   updateProductQuantity = async (req: Request, res: Response): Promise<Response> => {
     try {
-      const { productId, quantity, authId } = req.body
+      const { productId, quantity, authId, optionSelectedIndex } = req.body
 
       await this.cartService.updateProductQuantity(
         authId as string,
-        productId as number,
-        quantity as number
+        Number(productId),
+        Number(quantity),
+        Number(optionSelectedIndex)
       )
 
       return res.status(200).json({ message: 'Product quantity updated' })
@@ -102,13 +104,13 @@ export class CartController {
 
   getCartInCheckout = async (req: Request, res: Response): Promise<Response> => {
     try {
-      const { authId } = req.body
+      const { authId } = req.params
 
       const {
         cart,
         stockChanged,
         optionChanged
-      } = await this.cartService.getCartInCheckout(authId as string)
+      } = await this.cartService.getCartInCheckout(authId)
 
       return res.status(200).json({
         cart,

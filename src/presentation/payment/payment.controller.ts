@@ -20,20 +20,16 @@ export class PaymentController {
   createCheckoutSession = async (req: Request, res: Response): Promise<Response> => {
     try {
       const {
-        orderId,
-        productsCart,
         shippingMethod,
         authId
       } = req.body
 
-      await this.paymentService.createCheckoutSession({
-        orderId,
-        productsCart,
+      const url = await this.paymentService.createCheckoutSession({
         shippingMethod,
         authId
       })
 
-      return res.status(200).json({ message: 'Checkout session created' })
+      return res.status(200).json({ url })
     } catch (error) {
       return this.handleError(error, res)
     }

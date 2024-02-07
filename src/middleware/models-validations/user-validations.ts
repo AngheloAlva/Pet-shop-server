@@ -8,7 +8,7 @@ export const createUserValidation = [
 ]
 
 export const updateUserValidation = [
-  param('id').isInt().withMessage('Id must be a number'),
+  param('authId').isString().withMessage('AuthId must be a string'),
   body('email').optional().isEmail().withMessage('Email must be a valid email'),
   body('lastName').optional().isString().withMessage('Last name must be a string'),
   body('name').optional().isString().withMessage('Name must be a string'),

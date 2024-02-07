@@ -25,7 +25,7 @@ interface CreateAddress {
   region: string
   authId: string
   isApartment: boolean
-  apartmentNumber: string
+  apartmentNumber?: string
 }
 
 interface UpdateAddress {

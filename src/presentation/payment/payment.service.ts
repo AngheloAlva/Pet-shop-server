@@ -16,23 +16,51 @@ const stripe = new Stripe(envs.STRIPE_SECRET_KEY)
 
 export class PaymentService {
   async createCheckoutSession ({
-    orderId, productsCart, shippingMethod, authId
-  }: CreatePayment): Promise<void> {
+    shippingMethod, authId
+  }: CreatePayment): Promise<string> {
     try {
       const user = await prisma.user.findUnique({
         where: {
           authId
         },
         include: {
-          cart: true
+          cart: true,
+          address: true
         }
       })
       if (user == null) throw CustomError.badRequest('User not found')
+      if (user.address == null) throw CustomError.badRequest('User address not found')
 
       const lineItems = []
       let total: number = 0
 
-      for (const item of productsCart) {
+      const order = await prisma.order.create({
+        data: {
+          userId: user.id,
+          shippingMethod,
+          addressId: 1,
+          paid: false,
+          payment: {
+            create: {
+              amount: total,
+              currency: 'clp',
+              status: 'PENDING'
+            }
+          }
+        }
+      })
+
+      const cart = await prisma.cart.findUnique({
+        where: {
+          userId: user.id
+        },
+        include: {
+          products: true
+        }
+      })
+      if (cart == null) throw CustomError.badRequest('Cart not found')
+
+      for (const item of cart.products) {
         const product = await prisma.product.findUnique({
           where: {
             id: item.productId
@@ -67,7 +95,7 @@ export class PaymentService {
 
         await prisma.orderItem.create({
           data: {
-            orderId,
+            orderId: order.id,
             quantity: item.quantity,
             productId: item.productId,
             productName: product.name,
@@ -85,31 +113,29 @@ export class PaymentService {
 
       const session = await stripe.checkout.sessions.create({
         payment_method_types: ['card'],
-        line_items: lineItems,
         mode: 'payment',
         success_url: `${envs.CLIENT_URL}/payment/success`,
         cancel_url: `${envs.CLIENT_URL}/payment/cancel`
       })
 
       if (session == null) throw CustomError.badRequest('Error creating session')
+      if (session.url == null) throw CustomError.badRequest('Error creating session')
 
-      const order = await prisma.order.create({
+      await prisma.order.update({
+        where: {
+          id: order.id
+        },
         data: {
-          userId: user.id,
-          shippingMethod,
-          addressId: 1,
-          paid: false,
-          checkoutSessionId: session.id,
           payment: {
-            create: {
+            update: {
               amount: total,
-              currency: 'clp',
-              status: 'PENDING'
+              stripeSessionId: session.id
             }
           }
         }
       })
-      if (order == null) throw CustomError.badRequest('Error creating order')
+
+      return session.url
     } catch (error) {
       throw CustomError.internalServerError(error as string)
     }

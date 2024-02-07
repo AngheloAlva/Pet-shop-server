@@ -45,11 +45,14 @@ export class UserService {
     }
   }
 
-  async getUserById (id: number): Promise<User> {
+  async getUserById (authId: string): Promise<User> {
     try {
       const user = await prisma.user.findUnique({
         where: {
-          id
+          authId
+        },
+        include: {
+          address: true
         }
       })
 
@@ -81,7 +84,7 @@ export class UserService {
     }
   }
 
-  async updateUser (id: number, {
+  async updateUser (authId: string, {
     email, lastName, name, password, phone, rut
   }: UpdateUser): Promise<{ message: string }> {
     try {
@@ -96,7 +99,7 @@ export class UserService {
 
       await prisma.user.update({
         where: {
-          id
+          authId
         },
         data: {
           ...updatedData

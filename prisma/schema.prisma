@@ -151,7 +151,7 @@ model Order {
   address             Address           @relation(fields: [addressId], references: [id])
   addressId           Int
   paid                Boolean           @default(false)
-  checkoutSessionId   String
+  checkoutSessionId   String?
   items               OrderItem[]
   payment             Payment?
 }

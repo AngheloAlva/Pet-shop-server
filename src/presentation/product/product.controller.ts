@@ -55,21 +55,17 @@ export class ProductController {
       const {
         limit,
         page,
-        order,
         search,
-        sortBy,
         petType,
         maxPrice,
         minPrice,
         lifeStage,
         brandSlug,
-        categorySlug,
-        isDiscounted,
-        isAvailable
+        isAvailable,
+        categorySlug
       } = req.query
 
       let isAvailableParsed: boolean
-      let isDiscountedParsed: boolean | undefined
 
       if (isAvailable === 'true') {
         isAvailableParsed = true
@@ -79,27 +75,16 @@ export class ProductController {
         isAvailableParsed = true
       }
 
-      if (isDiscounted === 'true') {
-        isDiscountedParsed = true
-      } else if (isDiscounted === 'false') {
-        isDiscountedParsed = false
-      } else {
-        isDiscountedParsed = undefined
-      }
-
       const { products, total } = await this.productService.getAllProducts({
         page: Number(page),
         limit: Number(limit),
-        order: order as string,
         search: search as string,
-        sortBy: sortBy as string,
         petType: petType as string,
         maxPrice: maxPrice as string,
         minPrice: minPrice as string,
         lifeStage: lifeStage as string,
         brandSlug: brandSlug as string,
         isAvailable: isAvailableParsed,
-        isDiscounted: isDiscountedParsed,
         categorySlug: categorySlug as string
       })
 

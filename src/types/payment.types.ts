@@ -1,4 +1,3 @@
-import type { ProductCart } from './product-cart.types'
 import type { Order } from './order.types'
 
 interface Payment {
@@ -14,8 +13,6 @@ interface Payment {
 
 interface CreatePayment {
   authId: string
-  productsCart: ProductCart[]
-  orderId: number
   shippingMethod: 'CHILEXPRESS' | 'STARKEN' | 'CORREOS_CHILE' | 'SHOP_PICKUP'
 }
 

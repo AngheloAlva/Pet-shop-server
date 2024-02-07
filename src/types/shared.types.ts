@@ -5,9 +5,7 @@ interface AvailableWithPagination extends PaginationDto {
 }
 
 interface GetProductsWithFilters extends PaginationDto {
-  order?: string
   search?: string
-  sortBy?: string
   petType?: string
   maxPrice?: string
   minPrice?: string
@@ -15,7 +13,6 @@ interface GetProductsWithFilters extends PaginationDto {
   lifeStage?: string
   isAvailable?: boolean
   categorySlug?: string
-  isDiscounted?: boolean
 }
 
 export {

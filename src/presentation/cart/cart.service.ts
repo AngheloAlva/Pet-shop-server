@@ -1,7 +1,7 @@
 import { CustomError } from '../../domain/errors/custom.error'
 import { prisma } from '../../domain/shared/prismaClient'
 
-import type { AddProductToCart, Cart } from '../../types/cart.types'
+import type { AddProductToCart, Cart, ProductCartResponse } from '../../types/cart.types'
 
 export class CartService {
   async createCart (authId: string): Promise<string> {
@@ -64,9 +64,9 @@ export class CartService {
 
   async addProductToCart ({
     optionSelectedIndex, productId, quantity, authId
-  }: AddProductToCart): Promise<void> {
+  }: AddProductToCart): Promise<ProductCartResponse> {
     try {
-      await prisma.$transaction(async (prismaClient) => {
+      const productCartResponse = await prisma.$transaction(async (prismaClient) => {
         const user = await prismaClient.user.findUnique({
           where: {
             authId
@@ -103,7 +103,8 @@ export class CartService {
         const productCart = await prismaClient.productCart.findFirst({
           where: {
             productId,
-            cartId: cart.id
+            cartId: cart.id,
+            optionSelectedIndex
           }
         })
 
@@ -116,10 +117,20 @@ export class CartService {
               quantity: productCart.quantity + quantity
             }
           })
-          return
+
+          const productCartResponse: ProductCartResponse = {
+            id: productCart.id,
+            cartId: cart.id,
+            quantity: productCart.quantity + quantity,
+            product,
+            productId: product.id,
+            optionSelectedIndex
+          }
+
+          return productCartResponse
         }
 
-        await prismaClient.productCart.create({
+        const newProductCart = await prismaClient.productCart.create({
           data: {
             quantity,
             productId,
@@ -127,13 +138,26 @@ export class CartService {
             optionSelectedIndex
           }
         })
+
+        const productCartResponse: ProductCartResponse = {
+          id: newProductCart.id,
+          cartId: cart.id,
+          quantity: newProductCart.quantity,
+          product,
+          productId: product.id,
+          optionSelectedIndex
+        }
+
+        return productCartResponse
       })
+
+      return productCartResponse
     } catch (error) {
       throw CustomError.internalServerError(error as string)
     }
   }
 
-  async removeProductFromCart (authId: string, productId: number): Promise<void> {
+  async removeProductFromCart (authId: string, productId: number, optionSelectedIndex: number): Promise<void> {
     try {
       await prisma.$transaction(async (prismaClient) => {
         const user = await prismaClient.user.findUnique({
@@ -153,7 +177,8 @@ export class CartService {
         await prismaClient.productCart.deleteMany({
           where: {
             productId,
-            cartId: cart.id
+            cartId: cart.id,
+            optionSelectedIndex
           }
         })
       })
@@ -162,7 +187,9 @@ export class CartService {
     }
   }
 
-  async updateProductQuantity (authId: string, productId: number, quantity: number): Promise<void> {
+  async updateProductQuantity (
+    authId: string, productId: number, quantity: number, optionSelectedIndex: number
+  ): Promise<void> {
     try {
       await prisma.$transaction(async (prismaClient) => {
         const user = await prismaClient.user.findUnique({
@@ -182,7 +209,8 @@ export class CartService {
         await prismaClient.productCart.updateMany({
           where: {
             productId,
-            cartId: cart.id
+            cartId: cart.id,
+            optionSelectedIndex
           },
           data: {
             quantity

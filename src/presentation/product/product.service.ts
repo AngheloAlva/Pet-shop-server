@@ -42,25 +42,21 @@ export class ProductService {
   async getAllProducts ({
     page,
     limit,
-    order,
     search,
-    sortBy,
     petType,
     brandSlug,
     maxPrice,
     minPrice,
     lifeStage,
     categorySlug,
-    isAvailable,
-    isDiscounted
+    isAvailable
   }: GetProductsWithFilters): Promise<{ products: Product[], total: number }> {
     const filters: any = {
       isAvailable
     }
 
-    if (petType != null) filters.petType = petType
+    if (petType != null) { filters.petType = { has: petType } }
     if (lifeStage != null) filters.lifeStage = lifeStage
-    if (isDiscounted != null) filters.discount = { gt: 0 }
     if (brandSlug != null) filters.brand = { slug: brandSlug }
     if (minPrice != null) filters.price = { gte: Number(minPrice) }
     if (categorySlug != null) filters.category = { slug: categorySlug }
@@ -73,8 +69,6 @@ export class ProductService {
       ]
     }
 
-    const orderBy = (sortBy != null) ? { [sortBy]: order } : undefined
-
     try {
       const [total, products] = await Promise.all([
         prisma.product.count({ where: filters }),
@@ -82,7 +76,6 @@ export class ProductService {
           where: filters,
           skip: (page - 1) * limit,
           take: limit,
-          orderBy,
           include: {
             brand: true,
             options: true,

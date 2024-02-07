@@ -60,9 +60,9 @@ export class UserController {
 
   getUserById = async (req: Request, res: Response): Promise<Response> => {
     try {
-      const { id } = req.params
+      const { authId } = req.params
 
-      const user = await this.userService.getUserById(Number(id))
+      const user = await this.userService.getUserById(authId)
 
       return res.status(200).json(user)
     } catch (error) {
@@ -84,10 +84,10 @@ export class UserController {
 
   updateUser = async (req: Request, res: Response): Promise<Response> => {
     try {
-      const { id } = req.params
+      const { authId } = req.params
       const { email, lastName, name, password, phone, rut } = req.body
 
-      const result = await this.userService.updateUser(Number(id), {
+      const result = await this.userService.updateUser(authId, {
         email,
         lastName,
         name,
