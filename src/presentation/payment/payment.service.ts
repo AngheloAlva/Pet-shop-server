@@ -5,13 +5,6 @@ import Stripe from 'stripe'
 
 import type { CreatePayment } from '../../types/payment.types'
 
-const shippingMethods = [
-  { CORREOS_CHILE: 4000 },
-  { CHILEXPRESS: 5000 },
-  { SHOP_PICKUP: 0 },
-  { STARKEN: 4500 }
-]
-
 const stripe = new Stripe(envs.STRIPE_SECRET_KEY)
 
 export class PaymentService {
@@ -107,12 +100,18 @@ export class PaymentService {
         })
       }
 
-      const shippingCost: number | undefined = shippingMethods.find(method => method[shippingMethod])?.[shippingMethod]
-      if (shippingCost === undefined) throw CustomError.badRequest('Shipping cost not found')
-      total += shippingCost
+      const shippingMethods = [
+        { CORREOS_CHILE: 4000 },
+        { CHILEXPRESS: 5000 },
+        { SHOP_PICKUP: 0 },
+        { STARKEN: 4500 }
+      ]
+
+      total += shippingMethods.find(method => method[shippingMethod])?.[shippingMethod] ?? 0
 
       const session = await stripe.checkout.sessions.create({
         payment_method_types: ['card'],
+        line_items: lineItems,
         mode: 'payment',
         success_url: `${envs.CLIENT_URL}/payment/success`,
         cancel_url: `${envs.CLIENT_URL}/payment/cancel`
@@ -131,6 +130,17 @@ export class PaymentService {
               amount: total,
               stripeSessionId: session.id
             }
+          }
+        }
+      })
+
+      await prisma.cart.update({
+        where: {
+          userId: user.id
+        },
+        data: {
+          products: {
+            deleteMany: {}
           }
         }
       })

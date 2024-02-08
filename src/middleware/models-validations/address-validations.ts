@@ -6,7 +6,7 @@ export const createAddressValidation = [
   body('number').isString().notEmpty().withMessage('Number is required'),
   body('region').isString().notEmpty().withMessage('Region is required'),
   body('street').isString().notEmpty().withMessage('Street is required'),
-  body('userId').isNumeric().notEmpty().withMessage('UserId is required'),
+  body('authId').isString().notEmpty().withMessage('UserId is required'),
   body('zipCode').isString().notEmpty().withMessage('ZipCode is required'),
   body('commune').isString().notEmpty().withMessage('Commune is required'),
   body('isApartment').isBoolean().notEmpty().withMessage('IsApartment is required'),
@@ -28,6 +28,6 @@ export const updateAddressValidation = [
   body('zipCode').isString().optional().withMessage('ZipCode is required'),
   body('commune').isString().optional().withMessage('Commune is required'),
   body('isApartment').isBoolean().optional().withMessage('IsApartment is required'),
-  body('apartmentNumber').isNumeric().optional().withMessage('ApartmentNumber is required'),
+  body('apartmentNumber').isString().optional().withMessage('ApartmentNumber is required'),
   validate
 ]

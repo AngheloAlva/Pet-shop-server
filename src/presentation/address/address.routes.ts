@@ -2,7 +2,7 @@
 /* eslint-disable @typescript-eslint/no-extraneous-class */
 
 import { idValidation } from '../../middleware/id-validation'
-import { AddressController } from './controller.address'
+import { AddressController } from './address.controller'
 import { AddressService } from './address.service'
 import { Router } from 'express'
 import {

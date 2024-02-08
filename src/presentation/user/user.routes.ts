@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-misused-promises */
 /* eslint-disable @typescript-eslint/no-extraneous-class */
 
-import { getAllModelValidation } from '../../middleware/get-all-model-validation'
+import { authIdValidation, getAllModelValidation } from '../../middleware/get-all-model-validation'
 import { idValidation } from '../../middleware/id-validation'
 import { UserController } from './user.controller'
 import { UserService } from './user.service'
@@ -21,7 +21,7 @@ export class UserRoutes {
     router.post('/user', createUserValidation, controller.createUser)
 
     router.get('/user', getAllModelValidation, controller.getAllUsers)
-    router.get('/user/:authId', controller.getUserById)
+    router.get('/user/:authId', authIdValidation, controller.getUserById)
     router.get('/user/by-email/:email', emailValidation, controller.getUserByEmail)
 
     router.put('/user/:authId', updateUserValidation, controller.updateUser)

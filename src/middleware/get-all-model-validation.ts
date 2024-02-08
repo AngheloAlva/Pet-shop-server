@@ -1,4 +1,4 @@
-import { query } from 'express-validator'
+import { param, query } from 'express-validator'
 import { validate } from './validation'
 
 export const getAllModelValidation = [
@@ -12,5 +12,10 @@ export const getAllModelValidation = [
   query('minPrice').optional().isNumeric().withMessage('MinPrice must be a number'),
   query('lifeStage').optional().isString().withMessage('LifeStage must be a string'),
   query('categorySlug').optional().isString().withMessage('CategoryId must be a number'),
+  validate
+]
+
+export const authIdValidation = [
+  param('authId').isString().notEmpty().withMessage('UserId is required'),
   validate
 ]
