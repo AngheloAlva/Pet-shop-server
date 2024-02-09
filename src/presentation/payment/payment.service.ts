@@ -31,7 +31,7 @@ export class PaymentService {
         data: {
           userId: user.id,
           shippingMethod,
-          addressId: 1,
+          addressId: user.address[0].id,
           paid: false,
           payment: {
             create: {
@@ -91,7 +91,7 @@ export class PaymentService {
             orderId: order.id,
             quantity: item.quantity,
             productId: item.productId,
-            productName: product.name,
+            productName: product.name + ' ' + product.options[item.optionSelectedIndex].name,
             productImage: product.images[0],
             productDescription: product.miniDesc,
             optionSelectedIndex: item.optionSelectedIndex,
@@ -147,6 +147,7 @@ export class PaymentService {
 
       return session.url
     } catch (error) {
+      console.log(error)
       throw CustomError.internalServerError(error as string)
     }
   }

@@ -46,20 +46,21 @@ export class OrderService {
   async getOrdersByUserId (authId: string): Promise<Order[]> {
     try {
       const orders = await prisma.$transaction(async (prismaClient) => {
-        const user = await prisma.user.findUnique({
+        const user = await prismaClient.user.findUnique({
           where: {
             authId
           }
         })
         if (user == null) throw CustomError.notFound('User not found')
 
-        const orders = await prisma.order.findMany({
+        const orders = await prismaClient.order.findMany({
           where: {
-            id: user.id
+            userId: user.id
           },
           include: {
             items: true,
-            payment: true
+            payment: true,
+            address: true
           }
         })
 
