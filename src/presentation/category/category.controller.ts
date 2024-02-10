@@ -19,9 +19,10 @@ export class CategoryController {
 
   createCategory = async (req: Request, res: Response): Promise<Response> => {
     try {
-      const { name, description, image, slug, petType } = req.body
+      const { name, description, image, slug, petType, authId } = req.body
 
       const category = await this.categoryService.createCategory({
+        authId,
         name,
         description,
         image,
@@ -72,9 +73,9 @@ export class CategoryController {
   updateCategory = async (req: Request, res: Response): Promise<Response> => {
     try {
       const { id } = req.params
-      const { name, description, image, slug } = req.body
+      const { name, description, image, slug, authId } = req.body
 
-      await this.categoryService.updateCategory(Number(id), {
+      await this.categoryService.updateCategory(Number(id), authId as string, {
         name, description, image, slug
       })
 
@@ -89,8 +90,9 @@ export class CategoryController {
   deleteCategory = async (req: Request, res: Response): Promise<Response> => {
     try {
       const { id } = req.params
+      const { authId } = req.body
 
-      await this.categoryService.deleteCategory(Number(id))
+      await this.categoryService.deleteCategory(Number(id), authId as string)
 
       return res.status(200).json({
         message: 'Category deleted successfully'
@@ -103,8 +105,9 @@ export class CategoryController {
   restoreCategory = async (req: Request, res: Response): Promise<Response> => {
     try {
       const { id } = req.params
+      const { authId } = req.body
 
-      await this.categoryService.restoreCategory(Number(id))
+      await this.categoryService.restoreCategory(Number(id), authId as string)
 
       return res.status(200).json({
         message: 'Category restored successfully'

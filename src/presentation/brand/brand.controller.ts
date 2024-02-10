@@ -18,12 +18,13 @@ export class BrandController {
 
   createBrand = async (req: Request, res: Response): Promise<Response> => {
     try {
-      const { name, slug, image } = req.body
+      const { name, slug, image, authId } = req.body
 
       const brand = await this.brandService.createBrand({
         name,
         slug,
-        image
+        image,
+        authId
       })
 
       return res.status(201).json(brand)
@@ -85,13 +86,13 @@ export class BrandController {
   updateBrand = async (req: Request, res: Response): Promise<Response> => {
     try {
       const { id } = req.params
-      const { name, slug, image } = req.body
+      const { name, slug, image, authId } = req.body
 
-      const brand = await this.brandService.updateBrand(Number(id), {
-        name,
-        slug,
-        image
-      })
+      const brand = await this.brandService.updateBrand(
+        Number(id),
+        authId as string,
+        { name, slug, image }
+      )
 
       return res.status(200).json(brand)
     } catch (error) {
@@ -102,8 +103,9 @@ export class BrandController {
   deleteBrand = async (req: Request, res: Response): Promise<Response> => {
     try {
       const { id } = req.params
+      const { authId } = req.body
 
-      await this.brandService.deleteBrand(Number(id))
+      await this.brandService.deleteBrand(Number(id), authId as string)
 
       return res.status(200).json({
         message: 'Brand deleted successfully'
@@ -116,8 +118,9 @@ export class BrandController {
   restoreBrand = async (req: Request, res: Response): Promise<Response> => {
     try {
       const { id } = req.params
+      const { authId } = req.body
 
-      await this.brandService.restoreBrand(Number(id))
+      await this.brandService.restoreBrand(Number(id), authId as string)
 
       return res.status(200).json({
         message: 'Brand restored successfully'

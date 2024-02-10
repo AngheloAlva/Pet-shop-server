@@ -20,6 +20,7 @@ interface Product {
 }
 
 interface CreateProduct {
+  authId: string
   categoryId: number
   petType: string[]
   name: string

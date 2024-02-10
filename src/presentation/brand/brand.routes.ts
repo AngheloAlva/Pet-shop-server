@@ -2,6 +2,7 @@
 /* eslint-disable @typescript-eslint/no-extraneous-class */
 
 import { getAllModelValidation } from '../../middleware/get-all-model-validation'
+import { idAndAuthIdValidation } from '../../middleware/id-and-authId-validation'
 import { slugValidation } from '../../middleware/slug-validation'
 import { idValidation } from '../../middleware/id-validation'
 import { BrandController } from './brand.controller'
@@ -26,9 +27,9 @@ export class BrandRoutes {
 
     router.put('/brand/:id', updateBrandValidation, controller.updateBrand)
 
-    router.patch('/brand/activate/:id', idValidation, controller.restoreBrand)
+    router.patch('/brand/activate/:id', idAndAuthIdValidation, controller.restoreBrand)
 
-    router.delete('/brand/:id', idValidation, controller.deleteBrand)
+    router.delete('/brand/:id', idAndAuthIdValidation, controller.deleteBrand)
 
     return router
   }

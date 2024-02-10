@@ -113,8 +113,8 @@ export class PaymentService {
         payment_method_types: ['card'],
         line_items: lineItems,
         mode: 'payment',
-        success_url: `${envs.CLIENT_URL}/payment/success`,
-        cancel_url: `${envs.CLIENT_URL}/payment/cancel`
+        success_url: `${envs.CLIENT_URL}/successful/${order.id}`,
+        cancel_url: `${envs.CLIENT_URL}/cancel/${order.id}`
       })
 
       if (session == null) throw CustomError.badRequest('Error creating session')
@@ -197,6 +197,16 @@ export class PaymentService {
           paid: true
         }
       })
+
+      await prisma.payment.update({
+        where: {
+          orderId: order.id
+        },
+        data: {
+          status: 'PAID'
+        }
+      }
+      )
     }
 
     return {

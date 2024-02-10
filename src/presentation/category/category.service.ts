@@ -1,5 +1,6 @@
 import { CustomError } from '../../domain/errors/custom.error'
 import { prisma } from '../../domain/shared/prismaClient'
+import { isAdmin } from '../../helpers/is-admin'
 
 import type {
   Category,
@@ -9,9 +10,11 @@ import type {
 
 export class CategoryService {
   async createCategory ({
-    name, description, image, slug, petType
+    name, description, image, slug, petType, authId
   }: CreateCategory): Promise<Category> {
     try {
+      await isAdmin(authId)
+
       const category = await prisma.category.create({
         data: {
           name,
@@ -70,19 +73,25 @@ export class CategoryService {
     }
   }
 
-  async updateCategory (id: number,
+  async updateCategory (id: number, authId: string,
     { name, slug, image, description }: UpdateCategory
   ): Promise<Category> {
     try {
+      await isAdmin(authId)
+
+      const updateData: UpdateCategory = {}
+
+      if (name != null) updateData.name = name
+      if (slug != null) updateData.slug = slug
+      if (image != null) updateData.image = image
+      if (description != null) updateData.description = description
+
       const category = await prisma.category.update({
         where: {
           id
         },
         data: {
-          name,
-          description,
-          image,
-          slug
+          ...updateData
         }
       })
 
@@ -92,8 +101,10 @@ export class CategoryService {
     }
   }
 
-  async deleteCategory (id: number): Promise<Category> {
+  async deleteCategory (id: number, authId: string): Promise<Category> {
     try {
+      await isAdmin(authId)
+
       const category = await prisma.category.update({
         where: {
           id
@@ -109,8 +120,10 @@ export class CategoryService {
     }
   }
 
-  async restoreCategory (id: number): Promise<Category> {
+  async restoreCategory (id: number, authId: string): Promise<Category> {
     try {
+      await isAdmin(authId)
+
       const category = await prisma.category.update({
         where: {
           id

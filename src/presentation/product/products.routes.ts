@@ -11,6 +11,7 @@ import {
   createProductValidation,
   updateProductValidation
 } from '../../middleware/models-validations/product-validations'
+import { idAndAuthIdValidation } from '../../middleware/id-and-authId-validation'
 
 export class ProductRoutes {
   static get routes (): Router {
@@ -26,9 +27,9 @@ export class ProductRoutes {
 
     router.put('/product/:id', updateProductValidation, controller.updateProduct)
 
-    router.patch('/product/activate/:id', idValidation, controller.restoreProduct)
+    router.patch('/product/activate/:id', idAndAuthIdValidation, controller.restoreProduct)
 
-    router.delete('/product/:id', idValidation, controller.deleteProduct)
+    router.delete('/product/:id', idAndAuthIdValidation, controller.deleteProduct)
 
     return router
   }

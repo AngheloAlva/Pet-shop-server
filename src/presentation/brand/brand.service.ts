@@ -1,6 +1,7 @@
 import { CustomError } from '../../domain/errors/custom.error'
 import { verifyBrandExist } from '../../helpers/brand-helpers'
 import { prisma } from '../../domain/shared/prismaClient'
+import { isAdmin } from '../../helpers/is-admin'
 
 import type { AvailableWithPagination } from '../../types/shared.types'
 import type {
@@ -11,9 +12,10 @@ import type {
 
 export class BrandService {
   async createBrand ({
-    image, name, slug
+    image, name, slug, authId
   }: CreateBrand): Promise<Brand> {
     try {
+      await isAdmin(authId)
       await verifyBrandExist(name)
 
       const brand = await prisma.brand.create({
@@ -84,10 +86,12 @@ export class BrandService {
     }
   }
 
-  async updateBrand (id: number, {
+  async updateBrand (id: number, authId: string, {
     image, name, slug
   }: UpdateBrand): Promise<Brand> {
     try {
+      await isAdmin(authId)
+
       const updateData: UpdateBrand = {}
 
       if (image != null) updateData.image = image
@@ -113,8 +117,10 @@ export class BrandService {
     }
   }
 
-  async deleteBrand (id: number): Promise<void> {
+  async deleteBrand (id: number, authId: string): Promise<void> {
     try {
+      await isAdmin(authId)
+
       await prisma.brand.update({
         where: {
           id
@@ -128,8 +134,10 @@ export class BrandService {
     }
   }
 
-  async restoreBrand (id: number): Promise<void> {
+  async restoreBrand (id: number, authId: string): Promise<void> {
     try {
+      await isAdmin(authId)
+
       await prisma.brand.update({
         where: {
           id

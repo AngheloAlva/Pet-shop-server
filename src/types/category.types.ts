@@ -14,6 +14,7 @@ interface Category {
 }
 
 interface CreateCategory {
+  authId: string
   name: string
   slug: string
   description: string

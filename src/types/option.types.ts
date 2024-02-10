@@ -9,6 +9,7 @@ interface Option {
 }
 
 interface CreateOption {
+  authId: string
   name: string
   price: number
   stock: number

@@ -21,6 +21,7 @@ export class ProductController {
       const {
         name,
         slug,
+        authId,
         images,
         brandId,
         options,
@@ -34,6 +35,7 @@ export class ProductController {
       const product = await this.productService.createProduct({
         name,
         slug,
+        authId,
         images,
         options,
         petType,
@@ -115,6 +117,7 @@ export class ProductController {
       const {
         name,
         slug,
+        authId,
         images,
         brandId,
         petType,
@@ -124,7 +127,7 @@ export class ProductController {
         description
       } = req.body
 
-      const product = await this.productService.updateProduct(Number(id), {
+      const product = await this.productService.updateProduct(Number(id), authId as string, {
         name,
         slug,
         images,
@@ -157,8 +160,9 @@ export class ProductController {
   deleteProduct = async (req: Request, res: Response): Promise<Response> => {
     try {
       const { id } = req.params
+      const { authId } = req.body
 
-      await this.productService.deleteProduct(Number(id))
+      await this.productService.deleteProduct(Number(id), authId as string)
 
       return res.status(200).json({
         message: 'Product deleted successfully'
@@ -171,8 +175,9 @@ export class ProductController {
   restoreProduct = async (req: Request, res: Response): Promise<Response> => {
     try {
       const { id } = req.params
+      const { authId } = req.body
 
-      await this.productService.restoreProduct(Number(id))
+      await this.productService.restoreProduct(Number(id), authId as string)
 
       return res.status(200).json({
         message: 'Product restored successfully'

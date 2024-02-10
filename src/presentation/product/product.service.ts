@@ -1,5 +1,6 @@
 import { CustomError } from '../../domain/errors/custom.error'
 import { prisma } from '../../domain/shared/prismaClient'
+import { isAdmin } from '../../helpers/is-admin'
 
 import type { GetProductsWithFilters } from '../../types/shared.types'
 import type {
@@ -11,9 +12,11 @@ import type {
 
 export class ProductService {
   async createProduct ({
-    name, description, brandId, categoryId, options, images, lifeStage, miniDesc, petType, slug
+    name, description, brandId, categoryId, options, images, lifeStage, miniDesc, petType, slug, authId
   }: CreateProduct): Promise<Product> {
     try {
+      await isAdmin(authId)
+
       const descriptionString: string = JSON.stringify(description)
 
       const product = await prisma.product.create({
@@ -136,10 +139,12 @@ export class ProductService {
     }
   }
 
-  async updateProduct (id: number, {
+  async updateProduct (id: number, authId: string, {
     name, description, brandId, categoryId, images, lifeStage, miniDesc, petType, slug
   }: UpdateProduct): Promise<Product> {
     try {
+      await isAdmin(authId)
+
       const updatedData: UpdatedDataUpdatedProduct = {}
 
       if (description != null) updatedData.description = JSON.stringify(description)
@@ -167,8 +172,10 @@ export class ProductService {
     }
   }
 
-  async deleteProduct (id: number): Promise<void> {
+  async deleteProduct (id: number, authId: string): Promise<void> {
     try {
+      await isAdmin(authId)
+
       await prisma.product.update({
         where: {
           id
@@ -182,8 +189,10 @@ export class ProductService {
     }
   }
 
-  async restoreProduct (id: number): Promise<void> {
+  async restoreProduct (id: number, authId: string): Promise<void> {
     try {
+      await isAdmin(authId)
+
       await prisma.product.update({
         where: {
           id

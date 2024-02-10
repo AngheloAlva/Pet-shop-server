@@ -5,6 +5,7 @@ const petTypes = ['DOG', 'CAT', 'BIRD', 'FISH', 'REPTILE', 'SMALL_ANIMAL']
 const lifeStages = ['PUPPY', 'ADULT', 'SENIOR', 'KITTEN', 'ALL_LIFE_STAGES']
 
 export const createProductValidation = [
+  body('authId').isString().notEmpty().withMessage('AuthId is required'),
   body('name').isString().notEmpty().isLength({ min: 3, max: 255 }),
   body('slug').isString().notEmpty().isLength({ min: 3, max: 255 }),
   body('miniDesc').isString().notEmpty().withMessage('Mini description must be a string'),
@@ -28,6 +29,7 @@ export const createProductValidation = [
 
 export const updateProductValidation = [
   param('id').isNumeric().notEmpty().withMessage('Product id must be a number'),
+  body('authId').isString().notEmpty().withMessage('AuthId is required'),
   body('name').optional().isString().notEmpty().isLength({ min: 3, max: 255 }),
   body('slug').optional().isString().notEmpty().isLength({ min: 3, max: 255 }),
   body('miniDesc').optional().isString().notEmpty().isLength({ min: 20, max: 255 }),

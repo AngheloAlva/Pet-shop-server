@@ -19,9 +19,9 @@ export class OptionController {
   updateOption = async (req: Request, res: Response): Promise<Response> => {
     try {
       const { id } = req.params
-      const { discount, price, stock } = req.body
+      const { discount, price, stock, authId } = req.body
 
-      await this.optionService.updateOption(Number(id), {
+      await this.optionService.updateOption(Number(id), authId as string, {
         discount, price, stock
       })
 
@@ -36,8 +36,9 @@ export class OptionController {
   deleteOption = async (req: Request, res: Response): Promise<Response> => {
     try {
       const { id } = req.params
+      const { authId } = req.body
 
-      await this.optionService.deleteOption(Number(id))
+      await this.optionService.deleteOption(Number(id), authId as string)
 
       return res.status(200).json({
         message: 'Option deleted successfully'

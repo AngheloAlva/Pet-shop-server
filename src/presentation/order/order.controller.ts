@@ -19,8 +19,9 @@ export class OrderController {
   getOrders = async (req: Request, res: Response): Promise<Response> => {
     try {
       const { page, limit } = req.query
+      const { authId } = req.body
 
-      const orders = await this.orderService.getOrders({
+      const orders = await this.orderService.getOrders(authId as string, {
         page: Number(page),
         limit: Number(limit)
       })

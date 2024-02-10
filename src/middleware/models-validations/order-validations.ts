@@ -1,9 +1,10 @@
-import { param, query } from 'express-validator'
+import { body, param, query } from 'express-validator'
 import { validate } from '../validation'
 
 export const getOrdersValidations = [
   query('page').notEmpty().isInt({ min: 1 }),
   query('limit').notEmpty().isInt({ min: 1 }),
+  body('authId').isString().notEmpty().withMessage('authId must be a string'),
   validate
 ]
 

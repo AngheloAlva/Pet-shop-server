@@ -1,14 +1,17 @@
 import { CustomError } from '../../domain/errors/custom.error'
 import { prisma } from '../../domain/shared/prismaClient'
+import { isAdmin } from '../../helpers/is-admin'
 
 import type { PaginationDto } from '../../domain/shared/pagination.dto'
 import type { Order } from '../../types/order.types'
 
 export class OrderService {
-  async getOrders ({
+  async getOrders (authId: string, {
     limit = 10, page = 1
   }: PaginationDto): Promise<Order[]> {
     try {
+      await isAdmin(authId)
+
       const orders = await prisma.order.findMany({
         skip: (page - 1) * limit,
         take: limit,

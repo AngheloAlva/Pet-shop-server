@@ -2,7 +2,7 @@
 /* eslint-disable @typescript-eslint/no-extraneous-class */
 
 import { updateOptionValidation } from '../../middleware/models-validations/option-validations'
-import { idValidation } from '../../middleware/id-validation'
+import { idAndAuthIdValidation } from '../../middleware/id-and-authId-validation'
 import { OptionController } from './option.controller'
 import { OptionService } from './option.service'
 import { Router } from 'express'
@@ -15,7 +15,7 @@ export class OptionRoutes {
 
     router.put('/option/:id', updateOptionValidation, controller.updateOption)
 
-    router.delete('/option/:id', idValidation, controller.deleteOption)
+    router.delete('/option/:id', idAndAuthIdValidation, controller.deleteOption)
 
     return router
   }

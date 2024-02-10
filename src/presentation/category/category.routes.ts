@@ -11,6 +11,7 @@ import {
   createCategoryValidations,
   updateCategoryValidations
 } from '../../middleware/models-validations/category-validations'
+import { idAndAuthIdValidation } from '../../middleware/id-and-authId-validation'
 
 export class CategoryRoutes {
   static get routes (): Router {
@@ -25,9 +26,9 @@ export class CategoryRoutes {
     router.get('/category/by-slug/:slug', slugValidation, controller.getCategoryBySlug)
 
     router.put('/category/:id', updateCategoryValidations, controller.updateCategory)
-    router.patch('/category/:id', idValidation, controller.restoreCategory)
+    router.patch('/category/:id', idAndAuthIdValidation, controller.restoreCategory)
 
-    router.delete('/category/:id', idValidation, controller.deleteCategory)
+    router.delete('/category/:id', idAndAuthIdValidation, controller.deleteCategory)
 
     return router
   }
