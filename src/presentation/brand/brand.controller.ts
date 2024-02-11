@@ -47,13 +47,16 @@ export class BrandController {
         isAvailableParsed = true
       }
 
-      const brands = await this.brandService.getAllBrands({
+      const { total, brands } = await this.brandService.getAllBrands({
         isAvailable: isAvailableParsed,
         limit: Number(limit),
         page: Number(page)
       })
 
-      return res.status(200).json(brands)
+      return res.status(200).json({
+        total,
+        brands
+      })
     } catch (error) {
       return this.handleError(error, res)
     }

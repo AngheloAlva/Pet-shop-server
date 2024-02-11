@@ -8,20 +8,26 @@ import type { Order } from '../../types/order.types'
 export class OrderService {
   async getOrders (authId: string, {
     limit = 10, page = 1
-  }: PaginationDto): Promise<Order[]> {
+  }: PaginationDto): Promise<{ total: number, orders: Order[] }> {
     try {
       await isAdmin(authId)
 
-      const orders = await prisma.order.findMany({
-        skip: (page - 1) * limit,
-        take: limit,
-        include: {
-          items: true,
-          payment: true
-        }
-      })
+      const [total, orders] = await Promise.all([
+        prisma.order.count(),
+        prisma.order.findMany({
+          skip: (page - 1) * limit,
+          take: limit,
+          include: {
+            items: true,
+            payment: true
+          }
+        })
+      ])
 
-      return orders
+      return {
+        total,
+        orders
+      }
     } catch (error) {
       throw CustomError.internalServerError(error as string)
     }

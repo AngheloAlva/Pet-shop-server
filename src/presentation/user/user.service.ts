@@ -1,5 +1,6 @@
 import { CustomError } from '../../domain/errors/custom.error'
 import { prisma } from '../../domain/shared/prismaClient'
+import { isAdmin } from '../../helpers/is-admin'
 
 import type { CreateUser, UpdateUser, User } from '../../types/user.types'
 import type { AvailableWithPagination } from '../../types/shared.types'
@@ -27,19 +28,31 @@ export class UserService {
     }
   }
 
-  async getAllUsers ({
+  async getAllUsers (authId: string, {
     limit, page, isAvailable
-  }: AvailableWithPagination): Promise<User[]> {
+  }: AvailableWithPagination): Promise<{ total: number, users: User[] }> {
     try {
-      const users = await prisma.user.findMany({
-        skip: (page - 1) * limit,
-        take: limit,
-        where: {
-          isActive: isAvailable
-        }
-      })
+      await isAdmin(authId)
 
-      return users
+      const [total, users] = await Promise.all([
+        prisma.user.count({
+          where: {
+            isActive: isAvailable
+          }
+        }),
+        prisma.user.findMany({
+          skip: (page - 1) * limit,
+          take: limit,
+          where: {
+            isActive: isAvailable
+          }
+        })
+      ])
+
+      return {
+        users,
+        total
+      }
     } catch (error) {
       throw CustomError.internalServerError(error as string)
     }

@@ -26,7 +26,7 @@ export class CategoryRoutes {
     router.get('/category/by-slug/:slug', slugValidation, controller.getCategoryBySlug)
 
     router.put('/category/:id', updateCategoryValidations, controller.updateCategory)
-    router.patch('/category/:id', idAndAuthIdValidation, controller.restoreCategory)
+    router.patch('/category/activate/:id', idAndAuthIdValidation, controller.restoreCategory)
 
     router.delete('/category/:id', idAndAuthIdValidation, controller.deleteCategory)
 

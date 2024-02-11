@@ -31,11 +31,25 @@ export class CategoryService {
     }
   }
 
-  async getAllCategories (): Promise<Category[]> {
+  async getAllCategories (
+    { page, limit, isAvailable }: { page: number, limit: number, isAvailable: boolean }
+  ): Promise<{ total: number, categories: Category[] }> {
     try {
-      const categories = await prisma.category.findMany()
+      const [total, categories] = await Promise.all([
+        prisma.category.count(),
+        prisma.category.findMany({
+          where: {
+            isAvailable
+          },
+          skip: (page - 1) * limit,
+          take: limit
+        })
+      ])
 
-      return categories
+      return {
+        total,
+        categories
+      }
     } catch (error) {
       throw CustomError.internalServerError(error as string)
     }

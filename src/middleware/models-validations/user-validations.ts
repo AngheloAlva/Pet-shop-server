@@ -1,9 +1,17 @@
-import { body, param } from 'express-validator'
+import { body, param, query } from 'express-validator'
 import { validate } from '../validation'
 
 export const createUserValidation = [
   body('email').isEmail().withMessage('Email must be a valid email'),
   body('authId').isString().withMessage('AuthId must be a string'),
+  validate
+]
+
+export const getAllUsersValidation = [
+  query('limit').notEmpty().isInt({ min: 1 }),
+  query('page').notEmpty().isInt({ min: 1 }),
+  query('isAvailable').optional().isBoolean().withMessage('IsAvailable must be a boolean'),
+  query('authId').optional().isString().withMessage('authId must be a string'),
   validate
 ]
 

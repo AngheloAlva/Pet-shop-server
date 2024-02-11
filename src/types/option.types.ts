@@ -14,7 +14,6 @@ interface CreateOption {
   price: number
   stock: number
   discount: number
-  productId: number
 }
 
 interface UpdateOption {

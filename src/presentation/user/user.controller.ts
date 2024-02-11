@@ -34,7 +34,7 @@ export class UserController {
 
   getAllUsers = async (req: Request, res: Response): Promise<Response> => {
     try {
-      const { limit, page, isAvailable } = req.query
+      const { limit, page, isAvailable, authId } = req.query
 
       let isActiveParsed: boolean
 
@@ -46,13 +46,16 @@ export class UserController {
         isActiveParsed = true
       }
 
-      const users = await this.userService.getAllUsers({
+      const { total, users } = await this.userService.getAllUsers(authId as string, {
         limit: Number(limit),
         page: Number(page),
         isAvailable: isActiveParsed
       })
 
-      return res.status(200).json(users)
+      return res.status(200).json({
+        total,
+        users
+      })
     } catch (error) {
       return this.handleError(error, res)
     }

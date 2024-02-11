@@ -38,9 +38,27 @@ export class CategoryController {
 
   getAllCategories = async (req: Request, res: Response): Promise<Response> => {
     try {
-      const categories = await this.categoryService.getAllCategories()
+      const { page, limit, isAvailable } = req.query
+      let isAvailableParsed: boolean
 
-      return res.status(200).json(categories)
+      if (isAvailable === 'true') {
+        isAvailableParsed = true
+      } else if (isAvailable === 'false') {
+        isAvailableParsed = false
+      } else {
+        isAvailableParsed = true
+      }
+
+      const { categories, total } = await this.categoryService.getAllCategories({
+        page: Number(page),
+        limit: Number(limit),
+        isAvailable: isAvailableParsed
+      })
+
+      return res.status(200).json({
+        total,
+        categories
+      })
     } catch (error) {
       return this.handleError(error, res)
     }

@@ -34,17 +34,27 @@ export class BrandService {
 
   async getAllBrands ({
     limit = 1, page = 1, isAvailable = true
-  }: AvailableWithPagination): Promise<Brand[]> {
+  }: AvailableWithPagination): Promise<{ total: number, brands: Brand[] }> {
     try {
-      const brands = await prisma.brand.findMany({
-        where: {
-          isAvailable
-        },
-        skip: (page - 1) * limit,
-        take: limit
-      })
+      const [total, brands] = await Promise.all([
+        prisma.brand.count({
+          where: {
+            isAvailable
+          }
+        }),
+        await prisma.brand.findMany({
+          where: {
+            isAvailable
+          },
+          skip: (page - 1) * limit,
+          take: limit
+        })
+      ])
 
-      return brands
+      return {
+        total,
+        brands
+      }
     } catch (error) {
       throw CustomError.internalServerError(error as string)
     }

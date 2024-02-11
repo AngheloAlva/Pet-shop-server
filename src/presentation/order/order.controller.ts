@@ -18,15 +18,17 @@ export class OrderController {
 
   getOrders = async (req: Request, res: Response): Promise<Response> => {
     try {
-      const { page, limit } = req.query
-      const { authId } = req.body
+      const { page, limit, authId } = req.query
 
-      const orders = await this.orderService.getOrders(authId as string, {
+      const { orders, total } = await this.orderService.getOrders(authId as string, {
         page: Number(page),
         limit: Number(limit)
       })
 
-      return res.status(200).json(orders)
+      return res.status(200).json({
+        orders,
+        total
+      })
     } catch (error) {
       return this.handleError(error, res)
     }
