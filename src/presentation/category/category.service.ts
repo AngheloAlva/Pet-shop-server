@@ -88,7 +88,7 @@ export class CategoryService {
   }
 
   async updateCategory (id: number, authId: string,
-    { name, slug, image, description }: UpdateCategory
+    { name, slug, image, description, petType }: UpdateCategory
   ): Promise<Category> {
     try {
       await isAdmin(authId)
@@ -98,6 +98,7 @@ export class CategoryService {
       if (name != null) updateData.name = name
       if (slug != null) updateData.slug = slug
       if (image != null) updateData.image = image
+      if (petType != null) updateData.petType = petType
       if (description != null) updateData.description = description
 
       const category = await prisma.category.update({

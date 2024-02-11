@@ -19,6 +19,7 @@ export const updateCategoryValidations = [
   body('name').isString().optional(),
   body('description').isString().optional(),
   body('image').isString().optional(),
+  body('petType').isIn(petTypes).optional(),
   body('slug').isString().optional(),
   validate
 ]
