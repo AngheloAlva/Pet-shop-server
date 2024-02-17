@@ -24,6 +24,8 @@ export class Server {
     this.app.use(express.json())
     this.app.use(express.urlencoded({ extended: true }))
     this.app.use(cors({ origin: envs.CLIENT_URL, credentials: true }))
+    this.app.use(cors({ origin: envs.SECONDARY_CLIENT_URL, credentials: true }))
+    this.app.use(cors({ origin: envs.TERCIARY_CLIENT_URL, credentials: true }))
   }
 
   async start (): Promise<void> {
