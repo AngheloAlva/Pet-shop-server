@@ -20,7 +20,6 @@ export const updateUserValidation = [
   body('email').optional().isEmail().withMessage('Email must be a valid email'),
   body('lastName').optional().isString().withMessage('Last name must be a string'),
   body('name').optional().isString().withMessage('Name must be a string'),
-  body('password').optional().isString().withMessage('Password must be a string'),
   body('phone').optional().isString().withMessage('Phone must be a string'),
   body('rut').optional().isString().withMessage('Rut must be a string'),
   validate
